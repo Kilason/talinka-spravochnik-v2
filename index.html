@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Справочник посёлка Талинка: расписание транспорта, телефоны, услуги — всё в одном месте.">
+  <meta name="keywords" content="Талинка, справочник, транспорт, телефоны, услуги, гостиницы, мастера, такси">
+  <meta name="author" content="Dmitry Gennadievich Kilasonia">
+  <meta property="og:title" content="Талинка.СПРАВОЧНИК">
+  <meta property="og:description" content="Полный справочник посёлка Талинка: транспорт, услуги, мастера, такси, гостиницы и многое другое.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/">
+  <meta property="og:image" content="https://yourdomain.com/favicon.ico">
+
+  <title>Талинка.СПРАВОЧНИК</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #000;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      text-align: center;
+      color: #1a3d6d;
+      margin-bottom: 20px;
+      font-size: 1.6em;
+      padding-top: 10px;
+    }
+
+    h2 {
+      color: #1a3d6d;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      font-size: 1.2em;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 6px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+      font-size: 0.95em;
+    }
+
+    th, td {
+      padding: 8px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    tr:nth-child(even) {
+      background-color: #fbfbfb;
+    }
+
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 16px;
+      margin: 8px 0;
+    }
+
+    p {
+      margin: 8px 0;
+    }
+
+    .service-item {
+      margin: 8px 0;
+      padding: 8px;
+      background: #f8f9fa;
+      border-left: 4px solid #1976d2;
+      border-radius: 4px;
+      font-size: 0.95em;
+    }
+
+    .service-item a {
+      font-weight: bold;
+    }
+
+    .place-card {
+      margin: 12px 0;
+      padding: 12px;
+      background: #f0f7ff;
+      border-radius: 6px;
+      border: 1px solid #d1e5ff;
+      font-size: 0.95em;
+    }
+
+    .place-card h3 {
+      margin-top: 0;
+      color: #1a3d6d;
+      font-size: 1.1em;
+    }
+
+    .place-card p {
+      margin: 6px 0;
+    }
+
+    .notary-card {
+      margin: 12px 0;
+      padding: 12px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 0.95em;
+    }
+
+    .notary-card h3 {
+      margin-top: 0;
+      color: #1a3d6d;
+      font-size: 1.1em;
+    }
+
+    .notary-card table {
+      width: 100%;
+      margin: 8px 0;
+      border-collapse: collapse;
+    }
+
+    .notary-card th, .notary-card td {
+      padding: 6px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .hotel-card {
+      margin: 12px 0;
+      padding: 12px;
+      background: #f0f7ff;
+      border-radius: 6px;
+      border: 1px solid #d1e5ff;
+      font-size: 0.95em;
+    }
+
+    .hotel-card h3 {
+      margin-top: 0;
+      color: #1a3d6d;
+      font-size: 1.1em;
+    }
+
+    .hotel-card p {
+      margin: 6px 0;
+    }
+
+    .master-card {
+      margin: 12px 0;
+      padding: 12px;
+      background: #f0f9f0;
+      border-radius: 6px;
+      border: 1px solid #c8e6c9;
+      font-size: 0.95em;
+    }
+
+    .master-card h3 {
+      margin-top: 0;
+      color: #2e7d32;
+      font-size: 1.1em;
+    }
+
+    .master-card p {
+      margin: 6px 0;
+    }
+
+    .taxi-card {
+      margin: 12px 0;
+      padding: 12px;
+      background: #fff8e1;
+      border-radius: 6px;
+      border: 1px solid #ffe0b2;
+      font-size: 0.95em;
+    }
+
+    .taxi-card h3 {
+      margin-top: 0;
+      color: #f57c00;
+      font-size: 1.1em;
+    }
+
+    .taxi-card p {
+      margin: 6px 0;
+    }
+
+    .footer-note {
+      margin-top: 20px;
+      padding: 12px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #666;
+      border-top: 1px solid #eee;
+    }
+
+    .footer-note a {
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 600px) {
+      .container {
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.4em;
+      }
+      h2 {
+        font-size: 1.1em;
+      }
+      table {
+        font-size: 0.85em;
+      }
+      th, td {
+        padding: 6px;
+        font-size: 0.85em;
+      }
+      .place-card,
+      .notary-card,
+      .hotel-card,
+      .master-card,
+      .taxi-card {
+        padding: 10px;
+        font-size: 0.9em;
+      }
+      .place-card h3,
+      .notary-card h3,
+      .hotel-card h3,
+      .master-card h3,
+      .taxi-card h3 {
+        font-size: 1em;
+      }
+    }
+
+    /* Горизонтальная прокрутка для таблиц на маленьких экранах */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 12px 0;
+    }
+
+    .table-wrapper table {
+      min-width: 100%;
+    }
+
+    /* Реклама */
+    .yandex-ad {
+      text-align: center;
+      margin: 20px 0;
+      padding: 10px;
+      background: #f0f0f0;
+      border-radius: 6px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Талинка.СПРАВОЧНИК</h1>
+
+    <!-- Реклама Яндекса -->
+    <div class="yandex-ad">
+      <script type="text/javascript" src="https://yandex.ru/ads/system/core.js" async></script>
+      <div id="yandex_r1"></div>
+    </div>
+
+    <!-- Маршрутный транспорт -->
+    <h2>🚌 Маршрутный транспорт</h2>
+    <p><strong>Расписание автобусов: Нягань — Талинка — Ханты-Мансийск</strong></p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Нягань</th>
+            <th>Талинка</th>
+            <th>Ханты-Мансийск</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>6:45</td><td>8:15</td><td>10:45</td></tr>
+          <tr><td>11:30</td><td>13:00</td><td>15:30</td></tr>
+          <tr><td>16:30</td><td>18:00</td><td>20:30</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Ханты-Мансийск</th>
+            <th>Талинка</th>
+            <th>Нягань</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>7:00</td><td>9:30</td><td>11:00</td></tr>
+          <tr><td>13:00</td><td>15:15</td><td>16:45</td></tr>
+          <tr><td>17:00</td><td>19:15</td><td>20:45</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>Уточнение по отправлению из Ханты-Мансийска:</strong></p>
+    <ul>
+      <li><strong>Рейс в 7:00</strong> отправляется с <strong>Речпорта</strong> в <strong>7:00</strong>, прибывает в <strong>Транспортное агентство</strong> в <strong>7:20</strong></li>
+      <li><strong>Рейс в 13:00</strong> отправляется с <strong>Речпорта</strong> в <strong>12:30</strong>, прибывает в <strong>Транспортное агентство</strong> в <strong>13:00</strong></li>
+      <li><strong>Рейс в 17:00</strong> отправляется с <strong>Речпорта</strong> в <strong>16:30</strong>, прибывает в <strong>Транспортное агентство</strong> в <strong>17:00</strong></li>
+    </ul>
+
+    <p>
+      <a href="https://bilet.do/" target="_blank" style="font-weight:bold; color:#d32f2f; text-decoration:underline;">
+        👉 Заказать билет онлайн
+      </a>
+    </p>
+
+    <!-- Маршрут Талинка — Нягань -->
+    <h2>🚌 Маршрут Талинка — Нягань</h2>
+
+    <p><strong>Из Талинки в Нягань:</strong></p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Отправление из Талинки</th>
+            <th>Прибытие в Нягань</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>8:00</td><td>9:30</td></tr>
+          <tr><td>10:00</td><td>11:30</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Точка отправления:</strong> от мини-стадиона</p>
+    <p><strong>Телефон:</strong> <a href="tel:+79048846458">+7 904 884 64 58</a> (рейсы 8:00 и 13:00)</p>
+
+    <p><strong>Из Нягани в Талинку:</strong></p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Отправление из Нягани</th>
+            <th>Прибытие в Талинку</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>13:00</td><td>14:30</td></tr>
+          <tr><td>17:00</td><td>18:30</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Точка отправления:</strong> от Центра занятости</p>
+    <p><strong>Телефон:</strong> <a href="tel:+79505372500">+7 950 537 25 00</a> (рейсы 10:00 и 17:00)</p>
+
+    <!-- Экстренные и госуслуги -->
+    <h2>🏥 Экстренные и госуслуги</h2>
+    <div class="service-item">
+      📞 <strong>Регистратура НГП ТВА</strong><br>
+      <a href="tel:+73467257480">+7 346 725 74 80</a>
+    </div>
+    <div class="service-item">
+      🛠️ <strong>Диспетчер УТС</strong><br>
+      <a href="tel:+79044508335">+7 904 450 83 35</a>
+    </div>
+    <div class="service-item">
+      📝 <strong>МФЦ</strong><br>
+      <a href="tel:+73467833906">+7 346 783 39 06</a> *130#
+    </div>
+    <div class="service-item">
+      🚑 <strong>Скорая медицинская помощь</strong><br>
+      <a href="tel:+73467249093">+7 346 724 90 93</a>
+    </div>
+    <div class="service-item">
+      🏠 <strong>МУП "ЖКУ МО г.п. Талинка"</strong><br>
+      <a href="tel:+79821456425">+7 982 145 64 25</a>
+    </div>
+    <div class="service-item">
+      ⚡ <strong>АО "РЭС-Запад"</strong><br>
+      <a href="tel:+73467226013">+7 346 722 60 13</a>
+    </div>
+
+    <!-- Паспортный стол -->
+    <h2>🛂 Паспортный стол (миграционный пункт №2)</h2>
+    <p><strong>ОВМ ОМВД России по Октябрьскому району</strong></p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>День недели</th>
+            <th>В порядке живой очереди</th>
+            <th>По предварительной записи</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2-й и 4-й понедельник месяца</td>
+            <td>9:00 — 11:00</td>
+            <td>11:00 — 13:00</td>
+          </tr>
+          <tr>
+            <td>Вторник</td>
+            <td>14:00 — 17:00</td>
+            <td>17:00 — 19:00</td>
+          </tr>
+          <tr>
+            <td>Среда</td>
+            <td>14:00 — 17:00</td>
+            <td>17:00 — 19:00</td>
+          </tr>
+          <tr>
+            <td>Четверг</td>
+            <td>9:00 — 10:30</td>
+            <td>10:30 — 12:00</td>
+          </tr>
+          <tr>
+            <td>Пятница</td>
+            <td>9:00 — 10:30</td>
+            <td>10:30 — 12:00</td>
+          </tr>
+          <tr>
+            <td>1-я и 3-я суббота месяца</td>
+            <td>9:00 — 11:00</td>
+            <td>11:00 — 13:00</td>
+          </tr>
+          <tr>
+            <td>Воскресенье</td>
+            <td colspan="2">выходной день</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Консультация и предварительная запись по телефону:</strong><br>
+    <a href="tel:+73467260930">+7 346 726 09 30</a></p>
+
+    <!-- Нотариус -->
+    <h2>⚖️ Нотариус</h2>
+    <div class="notary-card">
+      <h3>Нотариус Колесник Наталья Николаевна</h3>
+      <p><strong>Адрес:</strong> 628195, Тюменская область, ХМАО-Югра, Октябрьский район, пгт. Талинка, мкр. Центральный, д. 55</p>
+      <p><strong>📞 Телефон:</strong> <a href="tel:+79227775323">+7 922 777 53 23</a></p>
+      <p><strong>📧 E-mail:</strong> <a href="mailto:not.230424@mail.ru">not.230424@mail.ru</a></p>
+      <table>
+        <thead>
+          <tr>
+            <th>Дни</th>
+            <th>Время работы</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Пн–Пт</td>
+            <td>10:00 – 17:00</td>
+          </tr>
+          <tr>
+            <td>Перерыв</td>
+            <td>13:00 – 14:00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Где можно перекусить -->
+    <h2>🍽 Где можно перекусить</h2>
+    <div class="place-card">
+      <h3>🍣 суши-бар ТУНЕЦ 🍕</h3>
+      <p><strong>Доставка суши и роллов по Талинке — быстро и вкусно!</strong></p>
+      <ul>
+        <li>✨ Свежие ингредиенты</li>
+        <li>✨ Уникальное меню</li>
+        <li>✨ «Счастливые часы»</li>
+      </ul>
+      <p><strong>📞 Телефон:</strong> <a href="tel:+79227704400">+7 922 770 44 00</a></p>
+      <p><strong>🌐 Закажите онлайн:</strong> <a href="https://talinka.sushi-tunec.ru" target="_blank">talinka.sushi-tunec.ru</a></p>
+      <p><strong>📍 Адрес:</strong> 1-й микрорайон, дом 51</p>
+      <p><strong>⏰ Время работы:</strong> 11:00–22:00</p>
+    </div>
+
+    <!-- Жильё и гостиницы -->
+    <h2>🛏 Жильё и гостиницы</h2>
+
+    <div class="hotel-card">
+      <h3>🏠 Посуточное жильё в Талинке</h3>
+      <p><strong>Идеально для командировок и гостей посёлка.</strong></p>
+      <ul>
+        <li>✔️ Выдаём отчётные документы</li>
+        <li>✔️ Чисто, уютно, удобно</li>
+      </ul>
+      <p><strong>📞 Телефон:</strong> <a href="tel:+79221422910">+7 922 142 29 10</a> (ИП Каргаполова)</p>
+    </div>
+
+    <div class="hotel-card">
+      <h3>🏨 Гостиница «Самарская»</h3>
+      <p><strong>📞 Телефон:</strong> <a href="tel:+73467245046">+7 (34672) 4-50-46</a></p>
+      <p><strong>🕒 Режим работы:</strong> Круглосуточно</p>
+    </div>
+
+    <div class="hotel-card">
+      <h3>🏨 Гостиница «Алтай»</h3>
+      <p><strong>📞 Телефоны:</strong></p>
+      <p>• <a href="tel:+79822016514">+7 982 201 65 14</a></p>
+      <p>• <a href="tel:+79125348316">+7 912 534 83 16</a></p>
+      <p><strong>🕒 Режим работы:</strong> Круглосуточно</p>
+    </div>
+
+    <!-- Мастера и специалисты -->
+    <h2>👩‍🔧 Мастера и специалисты</h2>
+
+    <div class="master-card">
+      <h3>✂️ Ателье "Золотая нить"</h3>
+      <p><strong>Услуги:</strong> Пошив и ремонт одежды</p>
+      <p><strong>🕒 График работы:</strong> Ежедневно с 13:00 до 18:00, кроме воскресенья</p>
+      <p><strong>📞 Телефон:</strong> <a href="tel:+79822004063">+7 982 200 40 63</a></p>
+    </div>
+
+    <div class="master-card">
+      <h3>🍰 Светлана — торты на заказ</h3>
+      <p><strong>Ссылка:</strong> <a href="https://vk.com/cvetlanna" target="_blank">VK: cvetlanna</a></p>
+    </div>
+
+    <div class="master-card">
+      <h3>💅 Мастер маникюра Анастасия Сунгатова</h3>
+      <p><strong>Услуги:</strong> Маникюр, педикюр, наращивание/коррекция ногтей</p>
+      <p><strong>📞 Телефоны:</strong></p>
+      <p>• <a href="tel:+79527094667">+7 952 709 46 67</a></p>
+      <p>• <a href="tel:+79125145064">+7 912 514 50 64</a></p>
+      <p><strong>💬 Написать:</strong> <a href="https://t.me/bondaryushka" target="_blank">Telegram (@bondaryushka)</a>, VK, Макс</p>
+    </div>
+
+    <div class="master-card">
+      <h3>🧱 Талинка Ремонт, Строительство, Отделка</h3>
+      <p><strong>Услуги:</strong> Квартиры и дома, санузлы, электрика, сантехника, отделочные работы</p>
+      <p><strong>📞 Телефон:</strong> <a href="tel:+79822169611">+7 982 216 96 11</a></p>
+      <p><strong>💬 Написать в Telegram:</strong> <a href="https://t.me/XXXCHERKASOVXXX" target="_blank">Телеграм</a></p>
+    </div>
+
+    <div class="master-card">
+      <h3>💇‍♀️ Ксения — мастер реконструкции волос и 🍮 десерты</h3>
+      <p><strong>Услуги:</strong> Реконструкция волос, уход за повреждёнными прядями, домашние десерты</p>
+      <p><strong>📞 Телефон:</strong> <a href="tel:+79828879447">+7 982 887 94 47</a></p>
+      <p><strong>Десерты:</strong> Моти, Мадлен, Муссовые торты и пирожные, Меренговые рулеты</p>
+    </div>
+
+    <div class="master-card">
+      <h3>🌟 NL — всё для здоровья, красоты и молодости</h3>
+      <p><strong>Услуги:</strong> Улучшить самочувствие, поддерживать красоту изнутри, повысить энергию и выносливость</p>
+      <p><strong>📞 Телефон:</strong> <a href="tel:+79828805156">+7 982 880 51 56</a></p>
+      <p><strong>💬 Чат в VK:</strong> <a href="https://vk.me/join/U_hQ0R3E8evA6UUSUtuBMhbKR6h3ohHA10M=" target="_blank">Чат в VK</a></p>
+    </div>
+
+    <div class="master-card">
+      <h3>🛍 Siberian Wellness / ЭКО магазин</h3>
+      <p><strong>Услуги:</strong> Здоровье и красота с натуральными продуктами</p>
+      <p><strong>📞 Телефон:</strong> <a href="tel:+79129346603">+7 912 934 66 03</a></p>
+      <p><strong>👥 Присоединиться к группе:</strong> <a href="https://t.me/+hKnnu80WhCxjNjhi" target="_blank">Чат в Telegram</a></p>
+    </div>
+
+    <div class="master-card">
+      <h3>🏪 Магазин "Семья"</h3>
+      <p><strong>📍 Адрес:</strong> ТЦ «Берлин»</p>
+      <p><strong>📞 Телефоны:</strong></p>
+      <p>• <a href="tel:+79221422910">+7 922 142 29 10</a></p>
+      <p>• <a href="tel:+79044507726">+7 904 450 77 26</a></p>
+    </div>
+
+    <!-- Такси -->
+    <h2>🚗 Такси</h2>
+
+    <div class="taxi-card">
+      <h3>📞 <a href="tel:+79088871167">+7 908 887 11 67</a></h3>
+    </div>
+
+    <div class="taxi-card">
+      <h3>📞 <a href="tel:+79825048047">+7 982 504 80 47</a></h3>
+    </div>
+
+    <div class="taxi-card">
+      <h3>📞 <a href="tel:+79088887842">+7 908 888 78 42</a></h3>
+    </div>
+
+    <!-- Футер -->
+    <div class="footer-note">
+      <p>Написать разработчику: <a href="mailto:89505319494@mail.ru">89505319494@mail.ru</a></p>
+    </div>
+
+    <!-- Реклама Яндекса внизу -->
+    <div class="yandex-ad">
+      <script type="text/javascript" src="https://yandex.ru/ads/system/core.js" async></script>
+      <div id="yandex_r2"></div>
+    </div>
+
+  </div>
+</body>
+</html>
