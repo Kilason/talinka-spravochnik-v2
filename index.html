@@ -9,14 +9,10 @@
   <meta property="og:title" content="Талинка.СПРАВОЧНИК">
   <meta property="og:description" content="Полный справочник посёлка Талинка: транспорт, услуги, мастера, такси, гостиницы и многое другое.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://talinka-spravochnik-v1.vercel.app/">
-  <meta property="og:image" content="https://talinka-spravochnik-v1.vercel.app/favicon.ico">
+  <meta property="og:url" content="https://talinka-spravochnik-v2.vercel.app/">
+  <meta property="og:image" content="https://talinka-spravochnik-v2.vercel.app/favicon.ico">
 
   <title>Талинка.СПРАВОЧНИК</title>
-
-  <!-- Yandex Autoplacement 18306702 -->
-  <script src="https://yandex.ru/ads/system/context.js" async></script>
-  <script data-page-id="18306702" src="https://yandex.ru/ads/system/ap-loader.js" async></script>
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
@@ -64,6 +60,13 @@
       padding-bottom: 6px;
     }
 
+    h3 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: 1.1em;
+      color: #2e7d32;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -99,6 +102,13 @@
       margin: 8px 0;
     }
 
+    .intro {
+      background: #f0f7ff;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+
     .service-item {
       margin: 8px 0;
       padding: 8px;
@@ -106,10 +116,6 @@
       border-left: 4px solid #1976d2;
       border-radius: 4px;
       font-size: 0.95em;
-    }
-
-    .service-item a {
-      font-weight: bold;
     }
 
     .place-card {
@@ -121,62 +127,6 @@
       font-size: 0.95em;
     }
 
-    .place-card h3 {
-      margin-top: 0;
-      color: #1a3d6d;
-      font-size: 1.1em;
-    }
-
-    .place-card p {
-      margin: 6px 0;
-    }
-
-    .notary-card {
-      margin: 12px 0;
-      padding: 12px;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      font-size: 0.95em;
-    }
-
-    .notary-card h3 {
-      margin-top: 0;
-      color: #1a3d6d;
-      font-size: 1.1em;
-    }
-
-    .notary-card table {
-      width: 100%;
-      margin: 8px 0;
-      border-collapse: collapse;
-    }
-
-    .notary-card th, .notary-card td {
-      padding: 6px;
-      border: 1px solid #ddd;
-      text-align: left;
-    }
-
-    .hotel-card {
-      margin: 12px 0;
-      padding: 12px;
-      background: #f0f7ff;
-      border-radius: 6px;
-      border: 1px solid #d1e5ff;
-      font-size: 0.95em;
-    }
-
-    .hotel-card h3 {
-      margin-top: 0;
-      color: #1a3d6d;
-      font-size: 1.1em;
-    }
-
-    .hotel-card p {
-      margin: 6px 0;
-    }
-
     .master-card {
       margin: 12px 0;
       padding: 12px;
@@ -184,16 +134,6 @@
       border-radius: 6px;
       border: 1px solid #c8e6c9;
       font-size: 0.95em;
-    }
-
-    .master-card h3 {
-      margin-top: 0;
-      color: #2e7d32;
-      font-size: 1.1em;
-    }
-
-    .master-card p {
-      margin: 6px 0;
     }
 
     .taxi-card {
@@ -205,16 +145,6 @@
       font-size: 0.95em;
     }
 
-    .taxi-card h3 {
-      margin-top: 0;
-      color: #f57c00;
-      font-size: 1.1em;
-    }
-
-    .taxi-card p {
-      margin: 6px 0;
-    }
-
     .footer-note {
       margin-top: 20px;
       padding: 12px;
@@ -224,12 +154,9 @@
       border-top: 1px solid #eee;
     }
 
-    .footer-note a {
-      color: #1a73e8;
-      text-decoration: none;
-    }
-
-    .about-section {
+    .about-section,
+    .privacy-section,
+    .article-section {
       margin-top: 30px;
       padding: 15px;
       background: #f8f9fa;
@@ -238,12 +165,6 @@
       border-left: 4px solid #6c757d;
     }
 
-    .about-section h3 {
-      margin-top: 0;
-      color: #495057;
-    }
-
-    /* Адаптивность */
     @media (max-width: 600px) {
       .container {
         padding: 12px;
@@ -254,6 +175,9 @@
       h2 {
         font-size: 1.1em;
       }
+      h3 {
+        font-size: 1em;
+      }
       table {
         font-size: 0.85em;
       }
@@ -261,21 +185,15 @@
         padding: 6px;
         font-size: 0.85em;
       }
+      .intro,
       .place-card,
-      .notary-card,
-      .hotel-card,
       .master-card,
       .taxi-card,
-      .about-section {
+      .about-section,
+      .privacy-section,
+      .article-section {
         padding: 10px;
         font-size: 0.9em;
-      }
-      .place-card h3,
-      .notary-card h3,
-      .hotel-card h3,
-      .master-card h3,
-      .taxi-card h3 {
-        font-size: 1em;
       }
     }
 
@@ -288,339 +206,233 @@
       min-width: 100%;
     }
 
+    nav {
+      text-align: center;
+      margin: 15px 0;
+      padding: 10px;
+      background: #e9ecef;
+      border-radius: 6px;
+    }
+
+    nav a {
+      margin: 0 8px;
+      color: #1a3d6d;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Талинка.СПРАВОЧНИК</h1>
+    <h1 id="top">Талинка.СПРАВОЧНИК</h1>
 
-    <!-- Маршрутный транспорт -->
-    <h2>🚌 Маршрутный транспорт</h2>
-    <p><strong>Расписание автобусов: Нягань — Талинка — Ханты-Мансийск</strong></p>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>Нягань</th>
-            <th>Талинка</th>
-            <th>Ханты-Мансийск</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>6:45</td><td>8:15</td><td>10:45</td></tr>
-          <tr><td>11:30</td><td>13:00</td><td>15:30</td></tr>
-          <tr><td>16:30</td><td>18:00</td><td>20:30</td></tr>
-        </tbody>
-      </table>
+    <nav>
+      <a href="#about-place">О Талинке</a> |
+      <a href="#transport">Транспорт</a> |
+      <a href="#services">Услуги</a> |
+      <a href="#masters">Мастера</a> |
+      <a href="#taxi">Такси</a> |
+      <a href="#about-site">О сайте</a>
+    </nav>
+
+    <div class="intro">
+      <p>Справочник посёлка Талинка — независимый информационный ресурс, созданный для жителей и гостей Октябрьского района ХМАО. Здесь вы найдёте актуальные расписания автобусов, контакты госучреждений, мастеров, такси и гостиниц. Проект обновляется регулярно и основан на открытых данных и информации, предоставленной местными специалистами.</p>
     </div>
 
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>Ханты-Мансийск</th>
-            <th>Талинка</th>
-            <th>Нягань</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>7:00</td><td>9:30</td><td>11:00</td></tr>
-          <tr><td>13:00</td><td>15:15</td><td>16:45</td></tr>
-          <tr><td>17:00</td><td>19:15</td><td>20:45</td></tr>
-        </tbody>
-      </table>
+    <!-- Статья 1: О посёлке -->
+    <div class="article-section" id="about-place">
+      <h2>📍 О посёлке Талинка</h2>
+      <p>Талинка — посёлок городского типа в Октябрьском районе Ханты-Мансийского автономного округа. Расположен на трассе Р404, в <strong>106 км от Нягани</strong> и в <strong>200 км от Ханты-Мансийска</strong>. Это важный транспортный узел региона, через который проходят основные автобусные маршруты между крупными городами округа.</p>
+      <p>В Талинке работают школа, детский сад, поликлиника, отделение МФЦ, а также множество частных мастеров и предпринимателей, предоставляющих услуги населению.</p>
     </div>
 
-    <p><strong>Уточнение по отправлению из Ханты-Мансийска:</strong></p>
-    <ul>
-      <li><strong>Рейс в 7:00</strong> отправляется с <strong>Речпорта</strong> в <strong>7:00</strong>, прибывает в <strong>Транспортное агентство</strong> в <strong>7:20</strong></li>
-      <li><strong>Рейс в 13:00</strong> отправляется с <strong>Речпорта</strong> в <strong>12:30</strong>, прибывает в <strong>Транспортное агентство</strong> в <strong>13:00</strong></li>
-      <li><strong>Рейс в 17:00</strong> отправляется с <strong>Речпорта</strong> в <strong>16:30</strong>, прибывает в <strong>Транспортное агентство</strong> в <strong>17:00</strong></li>
-    </ul>
-
-    <p>
-      <a href="https://bilet.do/" target="_blank" style="font-weight:bold; color:#d32f2f; text-decoration:underline;">
-        👉 Заказать билет онлайн
-      </a>
-    </p>
-
-    <!-- Маршрут Талинка — Нягань -->
-    <h2>🚌 Маршрут Талинка — Нягань</h2>
-
-    <p><strong>Из Талинки в Нягань:</strong></p>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>Отправление из Талинки</th>
-            <th>Прибытие в Нягань</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>8:00</td><td>9:30</td></tr>
-          <tr><td>10:00</td><td>11:30</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p><strong>Точка отправления:</strong> от мини-стадиона</p>
-    <p><strong>Телефон:</strong> <a href="tel:+79048846458">+7 904 884 64 58</a> (рейсы 8:00 и 13:00)</p>
-
-    <p><strong>Из Нягани в Талинку:</strong></p>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>Отправление из Нягани</th>
-            <th>Прибытие в Талинку</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>13:00</td><td>14:30</td></tr>
-          <tr><td>17:00</td><td>18:30</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p><strong>Точка отправления:</strong> от Центра занятости</p>
-    <p><strong>Телефон:</strong> <a href="tel:+79505372500">+7 950 537 25 00</a> (рейсы 10:00 и 17:00)</p>
-
-    <!-- Экстренные и госуслуги -->
-    <h2>🏥 Экстренные и госуслуги</h2>
-    <div class="service-item">
-      📞 <strong>Регистратура НГП ТВА</strong><br>
-      <a href="tel:+73467257480">+7 346 725 74 80</a>
-    </div>
-    <div class="service-item">
-      🛠️ <strong>Диспетчер УТС</strong><br>
-      <a href="tel:+79044508335">+7 904 450 83 35</a>
-    </div>
-    <div class="service-item">
-      📝 <strong>МФЦ</strong><br>
-      <a href="tel:+73467833906">+7 346 783 39 06</a> *130#
-    </div>
-    <div class="service-item">
-      🚑 <strong>Скорая медицинская помощь</strong><br>
-      <a href="tel:+73467249093">+7 346 724 90 93</a>
-    </div>
-    <div class="service-item">
-      🏠 <strong>МУП "ЖКУ МО г.п. Талинка"</strong><br>
-      <a href="tel:+79821456425">+7 982 145 64 25</a>
-    </div>
-    <div class="service-item">
-      ⚡ <strong>АО "РЭС-Запад"</strong><br>
-      <a href="tel:+73467226013">+7 346 722 60 13</a>
-    </div>
-
-    <!-- Паспортный стол -->
-    <h2>🛂 Паспортный стол (миграционный пункт №2)</h2>
-    <p><strong>ОВМ ОМВД России по Октябрьскому району</strong></p>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>День недели</th>
-            <th>В порядке живой очереди</th>
-            <th>По предварительной записи</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2-й и 4-й понедельник месяца</td>
-            <td>9:00 — 11:00</td>
-            <td>11:00 — 13:00</td>
-          </tr>
-          <tr>
-            <td>Вторник</td>
-            <td>14:00 — 17:00</td>
-            <td>17:00 — 19:00</td>
-          </tr>
-          <tr>
-            <td>Среда</td>
-            <td>14:00 — 17:00</td>
-            <td>17:00 — 19:00</td>
-          </tr>
-          <tr>
-            <td>Четверг</td>
-            <td>9:00 — 10:30</td>
-            <td>10:30 — 12:00</td>
-          </tr>
-          <tr>
-            <td>Пятница</td>
-            <td>9:00 — 10:30</td>
-            <td>10:30 — 12:00</td>
-          </tr>
-          <tr>
-            <td>1-я и 3-я суббота месяца</td>
-            <td>9:00 — 11:00</td>
-            <td>11:00 — 13:00</td>
-          </tr>
-          <tr>
-            <td>Воскресенье</td>
-            <td colspan="2">выходной день</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p><strong>Консультация и предварительная запись по телефону:</strong><br>
-    <a href="tel:+73467260930">+7 346 726 09 30</a></p>
-
-    <!-- Нотариус -->
-    <h2>⚖️ Нотариус</h2>
-    <div class="notary-card">
-      <h3>Нотариус Колесник Наталья Николаевна</h3>
-      <p><strong>Адрес:</strong> 628195, Тюменская область, ХМАО-Югра, Октябрьский район, пгт. Талинка, мкр. Центральный, д. 55</p>
-      <p><strong>📞 Телефон:</strong> <a href="tel:+79227775323">+7 922 777 53 23</a></p>
-      <p><strong>📧 E-mail:</strong> <a href="mailto:not.230424@mail.ru">not.230424@mail.ru</a></p>
-      <table>
-        <thead>
-          <tr>
-            <th>Дни</th>
-            <th>Время работы</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Пн–Пт</td>
-            <td>10:00 – 17:00</td>
-          </tr>
-          <tr>
-            <td>Перерыв</td>
-            <td>13:00 – 14:00</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Где можно перекусить -->
-    <h2>🍽 Где можно перекусить</h2>
-    <div class="place-card">
-      <h3>🍣 суши-бар ТУНЕЦ 🍕</h3>
-      <p><strong>Доставка суши и роллов по Талинке — быстро и вкусно!</strong></p>
+    <!-- Статья 2: Как добраться -->
+    <div class="article-section">
+      <h2>🚌 Как добраться до Талинки</h2>
+      <p>Основной способ добраться до Талинки — на автобусе. Регулярное сообщение налажено с Няганью и Ханты-Мансийском. Также доступны частные рейсы:</p>
       <ul>
-        <li>✨ Свежие ингредиенты</li>
-        <li>✨ Уникальное меню</li>
-        <li>✨ «Счастливые часы»</li>
+        <li>Из Талинки в Нягань — отправление <strong>от мини-стадиона</strong></li>
+        <li>Из Нягани в Талинку — отправление <strong>от Центра занятости</strong></li>
       </ul>
-      <p><strong>📞 Телефон:</strong> <a href="tel:+79227704400">+7 922 770 44 00</a></p>
-      <p><strong>🌐 Закажите онлайн:</strong> <a href="https://talinka.sushi-tunec.ru" target="_blank">talinka.sushi-tunec.ru</a></p>
-      <p><strong>📍 Адрес:</strong> 1-й микрорайон, дом 51</p>
-      <p><strong>⏰ Время работы:</strong> 11:00–22:00</p>
+      <p>Билеты на маршрут <strong>Талинка — Ханты-Мансийск</strong> можно заказать онлайн:</p>
+      <p><a href="https://bilet.do/" target="_blank" style="font-weight:bold; color:#d32f2f; text-decoration:underline;">👉 Заказать билет на bilet.do</a></p>
     </div>
 
-    <!-- Жильё и гостиницы -->
-    <h2>🛏 Жильё и гостиницы</h2>
+    <!-- Транспорт -->
+    <div id="transport">
+      <h2>🚌 Маршрутный транспорт</h2>
+      <p><strong>Расписание автобусов: Нягань — Талинка — Ханты-Мансийск</strong></p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Нягань</th><th>Талинка</th><th>Ханты-Мансийск</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>6:45</td><td>8:15</td><td>10:45</td></tr>
+            <tr><td>11:30</td><td>13:00</td><td>15:30</td></tr>
+            <tr><td>16:30</td><td>18:00</td><td>20:30</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-    <div class="hotel-card">
-      <h3>🏠 Посуточное жильё в Талинке</h3>
-      <p><strong>Идеально для командировок и гостей посёлка.</strong></p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Ханты-Мансийск</th><th>Талинка</th><th>Нягань</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>7:00</td><td>9:30</td><td>11:00</td></tr>
+            <tr><td>13:00</td><td>15:15</td><td>16:45</td></tr>
+            <tr><td>17:00</td><td>19:15</td><td>20:45</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p><strong>Уточнение по отправлению из Ханты-Мансийска:</strong></p>
       <ul>
-        <li>✔️ Выдаём отчётные документы</li>
-        <li>✔️ Чисто, уютно, удобно</li>
+        <li><strong>Рейс в 7:00</strong> — с Речпорта в 7:00, прибытие в Транспортное агентство в 7:20</li>
+        <li><strong>Рейс в 13:00</strong> — с Речпорта в 12:30, прибытие в 13:00</li>
+        <li><strong>Рейс в 17:00</strong> — с Речпорта в 16:30, прибытие в 17:00</li>
       </ul>
-      <p><strong>📞 Телефон:</strong> <a href="tel:+79221422910">+7 922 142 29 10</a> (ИП Каргаполова)</p>
+
+      <h3>🚌 Маршрут Талинка — Нягань</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Отправление</th><th>Прибытие</th></tr></thead>
+          <tbody>
+            <tr><td>8:00</td><td>9:30</td></tr>
+            <tr><td>10:00</td><td>11:30</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Точка отправления:</strong> от мини-стадиона<br>
+      <strong>Телефон:</strong> <a href="tel:+79048846458">+7 904 884 64 58</a></p>
+
+      <h3>🚌 Маршрут Нягань — Талинка</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Отправление</th><th>Прибытие</th></tr></thead>
+          <tbody>
+            <tr><td>13:00</td><td>14:30</td></tr>
+            <tr><td>17:00</td><td>18:30</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Точка отправления:</strong> от Центра занятости<br>
+      <strong>Телефон:</strong> <a href="tel:+79505372500">+7 950 537 25 00</a></p>
     </div>
 
-    <div class="hotel-card">
-      <h3>🏨 Гостиница «Самарская»</h3>
-      <p><strong>📞 Телефон:</strong> <a href="tel:+73467245046">+7 (34672) 4-50-46</a></p>
-      <p><strong>🕒 Режим работы:</strong> Круглосуточно</p>
+    <!-- Госуслуги -->
+    <div id="services">
+      <h2>🏥 Экстренные и госуслуги</h2>
+      <div class="service-item">📞 <strong>Регистратура НГП ТВА:</strong> <a href="tel:+73467257480">+7 346 725 74 80</a></div>
+      <div class="service-item">🛠️ <strong>Диспетчер УТС:</strong> <a href="tel:+79044508335">+7 904 450 83 35</a></div>
+      <div class="service-item">📝 <strong>МФЦ:</strong> <a href="tel:+73467833906">+7 346 783 39 06</a></div>
+      <div class="service-item">🚑 <strong>Скорая:</strong> <a href="tel:+73467249093">+7 346 724 90 93</a></div>
+      <div class="service-item">🏠 <strong>ЖКУ:</strong> <a href="tel:+79821456425">+7 982 145 64 25</a></div>
+      <div class="service-item">⚡ <strong>РЭС-Запад:</strong> <a href="tel:+73467226013">+7 346 722 60 13</a></div>
+
+      <!-- Паспортный стол -->
+      <h2>🛂 Паспортный стол</h2>
+      <p><strong>ОВМ ОМВД России по Октябрьскому району</strong></p>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>День</th><th>Живая очередь</th><th>По записи</th></tr></thead>
+          <tbody>
+            <tr><td>2-й и 4-й пн</td><td>9:00–11:00</td><td>11:00–13:00</td></tr>
+            <tr><td>Вт–Ср</td><td>14:00–17:00</td><td>17:00–19:00</td></tr>
+            <tr><td>Чт–Пт</td><td>9:00–10:30</td><td>10:30–12:00</td></tr>
+            <tr><td>1-я и 3-я сб</td><td>9:00–11:00</td><td>11:00–13:00</td></tr>
+            <tr><td>Вс</td><td colspan="2">выходной</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Запись по телефону:</strong> <a href="tel:+73467260930">+7 346 726 09 30</a></p>
+
+      <!-- Нотариус -->
+      <h2>⚖️ Нотариус Колесник Н.Н.</h2>
+      <p><strong>Адрес:</strong> мкр. Центральный, д. 55, Талинка, ХМАО</p>
+      <p><strong>Телефон:</strong> <a href="tel:+79227775323">+7 922 777 53 23</a><br>
+      <strong>E-mail:</strong> <a href="mailto:not.230424@mail.ru">not.230424@mail.ru</a></p>
     </div>
 
-    <div class="hotel-card">
-      <h3>🏨 Гостиница «Алтай»</h3>
-      <p><strong>📞 Телефоны:</strong></p>
-      <p>• <a href="tel:+79822016514">+7 982 201 65 14</a></p>
-      <p>• <a href="tel:+79125348316">+7 912 534 83 16</a></p>
-      <p><strong>🕒 Режим работы:</strong> Круглосуточно</p>
-    </div>
+    <!-- Мастера -->
+    <div id="masters">
+      <h2>👩‍🔧 Мастера и специалисты</h2>
 
-    <!-- Мастера и специалисты -->
-    <h2>👩‍🔧 Мастера и специалисты</h2>
+      <div class="master-card">
+        <h3>✂️ Ателье "Золотая нить"</h3>
+        <p>Пошив и ремонт одежды. Работает ежедневно с 13:00 до 18:00, кроме воскресенья.</p>
+        <p><strong>Телефон:</strong> <a href="tel:+79822004063">+7 982 200 40 63</a></p>
+      </div>
 
-    <div class="master-card">
-      <h3>✂️ Ателье "Золотая нить"</h3>
-      <p><strong>Услуги:</strong> Пошив и ремонт одежды</p>
-      <p><strong>🕒 График работы:</strong> Ежедневно с 13:00 до 18:00, кроме воскресенья</p>
-      <p><strong>📞 Телефон:</strong> <a href="tel:+79822004063">+7 982 200 40 63</a></p>
-    </div>
+      <div class="master-card">
+        <h3>🍰 Светлана — торты на заказ</h3>
+        <p><a href="https://vk.com/cvetlanna" target="_blank">VK: cvetlanna</a></p>
+      </div>
 
-    <div class="master-card">
-      <h3>🍰 Светлана — торты на заказ</h3>
-      <p><strong>Ссылка:</strong> <a href="https://vk.com/cvetlanna" target="_blank">VK: cvetlanna</a></p>
-    </div>
+      <div class="master-card">
+        <h3>💅 Анастасия Сунгатова — маникюр</h3>
+        <p>Маникюр, педикюр, наращивание ногтей.</p>
+        <p><strong>Телефоны:</strong><br>
+        • <a href="tel:+79527094667">+7 952 709 46 67</a><br>
+        • <a href="tel:+79125145064">+7 912 514 50 64</a></p>
+        <p><strong>Связь:</strong> <a href="https://t.me/bondaryushka" target="_blank">Telegram</a>, VK</p>
+      </div>
 
-    <div class="master-card">
-      <h3>💅 Мастер маникюра Анастасия Сунгатова</h3>
-      <p><strong>Услуги:</strong> Маникюр, педикюр, наращивание/коррекция ногтей</p>
-      <p><strong>📞 Телефоны:</strong></p>
-      <p>• <a href="tel:+79527094667">+7 952 709 46 67</a></p>
-      <p>• <a href="tel:+79125145064">+7 912 514 50 64</a></p>
-      <p><strong>💬 Написать:</strong> <a href="https://t.me/bondaryushka" target="_blank">Telegram (@bondaryushka)</a>, VK, Макс</p>
-    </div>
+      <div class="master-card">
+        <h3>🧱 Талинка Ремонт</h3>
+        <p>Квартиры, санузлы, электрика, сантехника, отделка.</p>
+        <p><strong>Телефон:</strong> <a href="tel:+79822169611">+7 982 216 96 11</a><br>
+        <strong>Telegram:</strong> <a href="https://t.me/XXXCHERKASOVXXX" target="_blank">Написать</a></p>
+      </div>
 
-    <div class="master-card">
-      <h3>🧱 Талинка Ремонт, Строительство, Отделка</h3>
-      <p><strong>Услуги:</strong> Квартиры и дома, санузлы, электрика, сантехника, отделочные работы</p>
-      <p><strong>📞 Телефон:</strong> <a href="tel:+79822169611">+7 982 216 96 11</a></p>
-      <p><strong>💬 Написать в Telegram:</strong> <a href="https://t.me/XXXCHERKASOVXXX" target="_blank">Телеграм</a></p>
-    </div>
+      <div class="master-card">
+        <h3>💇‍♀️ Ксения — реконструкция волос и десерты</h3>
+        <p>Уход за повреждёнными волосами. Домашние десерты: моти, мадлен, муссовые торты.</p>
+        <p><strong>Телефон:</strong> <a href="tel:+79828879447">+7 982 887 94 47</a></p>
+      </div>
 
-    <div class="master-card">
-      <h3>💇‍♀️ Ксения — мастер реконструкции волос и 🍮 десерты</h3>
-      <p><strong>Услуги:</strong> Реконструкция волос, уход за повреждёнными прядями, домашние десерты</p>
-      <p><strong>📞 Телефон:</strong> <a href="tel:+79828879447">+7 982 887 94 47</a></p>
-      <p><strong>Десерты:</strong> Моти, Мадлен, Муссовые торты и пирожные, Меренговые рулеты</p>
-    </div>
+      <div class="master-card">
+        <h3>🌟 NL — здоровье и красота</h3>
+        <p>Поддержка самочувствия, красоты изнутри, энергии и выносливости.</p>
+        <p><strong>Телефон:</strong> <a href="tel:+79828805156">+7 982 880 51 56</a><br>
+        <strong>VK:</strong> <a href="https://vk.me/join/U_hQ0R3E8evA6UUSUtuBMhbKR6h3ohHA10M=" target="_blank">Чат</a></p>
+      </div>
 
-    <div class="master-card">
-      <h3>🌟 NL — всё для здоровья, красоты и молодости</h3>
-      <p><strong>Услуги:</strong> Улучшить самочувствие, поддерживать красоту изнутри, повысить энергию и выносливость</p>
-      <p><strong>📞 Телефон:</strong> <a href="tel:+79828805156">+7 982 880 51 56</a></p>
-      <p><strong>💬 Чат в VK:</strong> <a href="https://vk.me/join/U_hQ0R3E8evA6UUSUtuBMhbKR6h3ohHA10M=" target="_blank">Чат в VK</a></p>
-    </div>
-
-    <div class="master-card">
-      <h3>🛍 Siberian Wellness / ЭКО магазин</h3>
-      <p><strong>Услуги:</strong> Здоровье и красота с натуральными продуктами</p>
-      <p><strong>📞 Телефон:</strong> <a href="tel:+79129346603">+7 912 934 66 03</a></p>
-      <p><strong>👥 Присоединиться к группе:</strong> <a href="https://t.me/+hKnnu80WhCxjNjhi" target="_blank">Чат в Telegram</a></p>
-    </div>
-
-    <div class="master-card">
-      <h3>🏪 Магазин "Семья"</h3>
-      <p><strong>📍 Адрес:</strong> ТЦ «Берлин»</p>
-      <p><strong>📞 Телефоны:</strong></p>
-      <p>• <a href="tel:+79221422910">+7 922 142 29 10</a></p>
-      <p>• <a href="tel:+79044507726">+7 904 450 77 26</a></p>
+      <div class="master-card">
+        <h3>🛍️ Siberian Wellness / ЭКО магазин</h3>
+        <p>Натуральные продукты для здоровья и красоты.</p>
+        <p><strong>Телефон:</strong> <a href="tel:+79129346603">+7 912 934 66 03</a><br>
+        <strong>Telegram:</strong> <a href="https://t.me/+hKnnu80WhCxjNjhi" target="_blank">Группа</a></p>
+      </div>
     </div>
 
     <!-- Такси -->
-    <h2>🚗 Такси</h2>
-
-    <div class="taxi-card">
-      <h3>📞 <a href="tel:+79088871167">+7 908 887 11 67</a></h3>
-    </div>
-
-    <div class="taxi-card">
-      <h3>📞 <a href="tel:+79825048047">+7 982 504 80 47</a></h3>
-    </div>
-
-    <div class="taxi-card">
-      <h3>📞 <a href="tel:+79088887842">+7 908 888 78 42</a></h3>
+    <div id="taxi">
+      <h2>🚗 Такси</h2>
+      <div class="taxi-card"><strong>📞</strong> <a href="tel:+79088871167">+7 908 887 11 67</a></div>
+      <div class="taxi-card"><strong>📞</strong> <a href="tel:+79825048047">+7 982 504 80 47</a></div>
+      <div class="taxi-card"><strong>📞</strong> <a href="tel:+79088887842">+7 908 888 78 42</a></div>
     </div>
 
     <!-- О сайте -->
-    <div class="about-section">
-      <h3>ℹ️ О справочнике</h3>
-      <p>Это бесплатный справочник посёлка Талинка, созданный для жителей и гостей. Здесь собраны актуальные контакты, расписания транспорта, информация о госуслугах, мастерах, гостиницах и такси.</p>
+    <div class="about-section" id="about-site">
+      <h2>ℹ️ О справочнике</h2>
+      <p>Этот сайт создан как общественный ресурс для жителей посёлка Талинка и гостей региона. Все данные собраны из открытых источников и предоставлены местными специалистами.</p>
       <p><strong>Разработчик:</strong> Дмитрий Геннадьевич Киласония</p>
-      <p><strong>Почта:</strong> <a href="mailto:89505319494@mail.ru">89505319494@mail.ru</a></p>
-      <p><strong>Источник:</strong> Информация собрана из открытых источников и предоставлена местными специалистами.</p>
+      <p><strong>Контакт:</strong> <a href="mailto:89505319494@mail.ru">89505319494@mail.ru</a></p>
       <p><strong>Обновлено:</strong> декабрь 2025</p>
+    </div>
+
+    <!-- Политика конфиденциальности -->
+    <div class="privacy-section">
+      <h2>🔒 Политика конфиденциальности</h2>
+      <p>Сайт не собирает персональные данные пользователей. В будущем может использоваться реклама от Яндекс или Google. Используя сайт, вы соглашаетесь с политикой cookies этих систем. Сайт не использует аналитику.</p>
     </div>
 
     <!-- Футер -->
     <div class="footer-note">
-      <p>Написать разработчику: <a href="mailto:89505319494@mail.ru">89505319494@mail.ru</a></p>
+      <p>© 2025 Талинка.СПРАВОЧНИК | <a href="#top">Наверх</a></p>
     </div>
 
   </div>
