@@ -15,7 +15,7 @@
   <title>Талинка.СПРАВОЧНИК</title>
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+  <link rel="icon" href="image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
 
   <style>
     * {
@@ -118,15 +118,6 @@
       font-size: 0.95em;
     }
 
-    .place-card {
-      margin: 12px 0;
-      padding: 12px;
-      background: #f0f7ff;
-      border-radius: 6px;
-      border: 1px solid #d1e5ff;
-      font-size: 0.95em;
-    }
-
     .master-card {
       margin: 12px 0;
       padding: 12px;
@@ -186,7 +177,6 @@
         font-size: 0.85em;
       }
       .intro,
-      .place-card,
       .master-card,
       .taxi-card,
       .about-section,
@@ -248,10 +238,10 @@
     <!-- Статья 2: Как добраться -->
     <div class="article-section">
       <h2>🚌 Как добраться до Талинки</h2>
-      <p>Основной способ добраться до Талинки — на автобусе. Регулярное сообщение налажено с Няганью и Ханты-Мансийском. Также доступны частные рейсы:</p>
+      <p>Основной способ добраться — на автобусе. Регулярное сообщение налажено с Няганью и Ханты-Мансийском. Также доступны частные рейсы:</p>
       <ul>
         <li>Из Талинки в Нягань — отправление <strong>от мини-стадиона</strong></li>
-        <li>Из Нягани в Талинку — отправление <strong>от Центра занятости</strong></li>
+        <li>Из Нягани в Талинку — отправление <<strong>от Центра занятости</strong></li>
       </ul>
       <p>Билеты на маршрут <strong>Талинка — Ханты-Мансийск</strong> можно заказать онлайн:</p>
       <p><a href="https://bilet.do/" target="_blank" style="font-weight:bold; color:#d32f2f; text-decoration:underline;">👉 Заказать билет на bilet.do</a></p>
@@ -260,7 +250,8 @@
     <!-- Транспорт -->
     <div id="transport">
       <h2>🚌 Маршрутный транспорт</h2>
-      <p><strong>Расписание автобусов: Нягань — Талинка — Ханты-Мансийск</strong></p>
+
+      <h3>Нягань — Талинка — Ханты-Мансийск</h3>
       <div class="table-wrapper">
         <table>
           <thead>
@@ -274,6 +265,7 @@
         </table>
       </div>
 
+      <h3>Ханты-Мансийск — Талинка — Нягань</h3>
       <div class="table-wrapper">
         <table>
           <thead>
@@ -294,31 +286,46 @@
         <li><strong>Рейс в 17:00</strong> — с Речпорта в 16:30, прибытие в 17:00</li>
       </ul>
 
-      <h3>🚌 Маршрут Талинка — Нягань</h3>
-      <div class="table-wrapper">
-        <table>
-          <thead><tr><th>Отправление</th><th>Прибытие</th></tr></thead>
-          <tbody>
-            <tr><td>8:00</td><td>9:30</td></tr>
-            <tr><td>10:00</td><td>11:30</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p><strong>Точка отправления:</strong> от мини-стадиона<br>
-      <strong>Телефон:</strong> <a href="tel:+79048846458">+7 904 884 64 58</a></p>
+      <p><strong>Билеты на маршрут Талинка — Ханты-Мансийск можно заказать онлайн:</strong></p>
+      <p><a href="https://bilet.do/" target="_blank" style="font-weight:bold; color:#d32f2f; text-decoration:underline;">👉 Заказать билет на bilet.do</a></p>
 
-      <h3>🚌 Маршрут Нягань — Талинка</h3>
+      <h3>Из Талинки в Нягань</h3>
       <div class="table-wrapper">
         <table>
-          <thead><tr><th>Отправление</th><th>Прибытие</th></tr></thead>
+          <thead><tr><th>Отправление</th><th>Точка отправления</th><th>Телефон</th></tr></thead>
           <tbody>
-            <tr><td>13:00</td><td>14:30</td></tr>
-            <tr><td>17:00</td><td>18:30</td></tr>
+            <tr>
+              <td>8:00</td>
+              <td>от мини-стадиона</td>
+              <td><a href="tel:+79048846458">+7 904 884 64 58</a></td>
+            </tr>
+            <tr>
+              <td>10:00</td>
+              <td>от мини-стадиона</td>
+              <td><a href="tel:+79505372500">+7 950 537 25 00</a></td>
+            </tr>
           </tbody>
         </table>
       </div>
-      <p><strong>Точка отправления:</strong> от Центра занятости<br>
-      <strong>Телефон:</strong> <a href="tel:+79505372500">+7 950 537 25 00</a></p>
+
+      <h3>Из Нягани в Талинку</h3>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Отправление</th><th>Точка отправления</th><th>Телефон</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>13:00</td>
+              <td>от Центра занятости</td>
+              <td><a href="tel:+79048846458">+7 904 884 64 58</a></td>
+            </tr>
+            <tr>
+              <td>17:00</td>
+              <td>от Центра занятости</td>
+              <td><a href="tel:+79505372500">+7 950 537 25 00</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <!-- Госуслуги -->
@@ -427,7 +434,7 @@
     <!-- Политика конфиденциальности -->
     <div class="privacy-section">
       <h2>🔒 Политика конфиденциальности</h2>
-      <p>Сайт не собирает персональные данные пользователей. В будущем может использоваться реклама от Яндекс или Google. Используя сайт, вы соглашаетесь с политикой cookies этих систем. Сайт не использует аналитику.</p>
+      <p>Сайт не собирает персональные данные пользователей. В будущем может использоваться реклама от Google или Яндекс. Используя сайт, вы соглашаетесь с политикой cookies этих систем. Сайт не использует аналитику.</p>
     </div>
 
     <!-- Футер -->
