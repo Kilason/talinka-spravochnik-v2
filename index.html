@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Справочник посёлка Талинка: расписание транспорта, телефоны, услуги — всё в одном месте.">
-  <meta name="keywords" content="Талинка, справочник, транспорт, телефоны, услуги, гостиницы, мастера, такси">
+  <meta name="description" content="Справочник посёлка Талинка: расписание транспорта, телефоны, госуслуги, мастера, такси, гостиницы — всё в одном месте.">
+  <meta name="keywords" content="Талинка, справочник, транспорт, телефоны, услуги, гостиницы, мастера, такси, Октябрьский район, ХМАО">
   <meta name="author" content="Dmitry Gennadievich Kilasonia">
   <meta property="og:title" content="Талинка.СПРАВОЧНИК">
   <meta property="og:description" content="Полный справочник посёлка Талинка: транспорт, услуги, мастера, такси, гостиницы и многое другое.">
@@ -229,6 +229,20 @@
       text-decoration: none;
     }
 
+    .about-section {
+      margin-top: 30px;
+      padding: 15px;
+      background: #f8f9fa;
+      border-radius: 6px;
+      font-size: 0.95em;
+      border-left: 4px solid #6c757d;
+    }
+
+    .about-section h3 {
+      margin-top: 0;
+      color: #495057;
+    }
+
     /* Адаптивность */
     @media (max-width: 600px) {
       .container {
@@ -251,7 +265,8 @@
       .notary-card,
       .hotel-card,
       .master-card,
-      .taxi-card {
+      .taxi-card,
+      .about-section {
         padding: 10px;
         font-size: 0.9em;
       }
@@ -264,7 +279,6 @@
       }
     }
 
-    /* Горизонтальная прокрутка для таблиц на маленьких экранах */
     .table-wrapper {
       overflow-x: auto;
       margin: 12px 0;
@@ -592,6 +606,16 @@
 
     <div class="taxi-card">
       <h3>📞 <a href="tel:+79088887842">+7 908 888 78 42</a></h3>
+    </div>
+
+    <!-- О сайте -->
+    <div class="about-section">
+      <h3>ℹ️ О справочнике</h3>
+      <p>Это бесплатный справочник посёлка Талинка, созданный для жителей и гостей. Здесь собраны актуальные контакты, расписания транспорта, информация о госуслугах, мастерах, гостиницах и такси.</p>
+      <p><strong>Разработчик:</strong> Дмитрий Геннадьевич Киласония</p>
+      <p><strong>Почта:</strong> <a href="mailto:89505319494@mail.ru">89505319494@mail.ru</a></p>
+      <p><strong>Источник:</strong> Информация собрана из открытых источников и предоставлена местными специалистами.</p>
+      <p><strong>Обновлено:</strong> декабрь 2025</p>
     </div>
 
     <!-- Футер -->
