@@ -18,7 +18,6 @@
   <link rel="icon" href="image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
 
   <style id="theme-styles">
-    /* Стили без изменений */
     :root {
       --bg-color: #f5f7fa;
       --container-bg: #fff;
@@ -57,7 +56,12 @@
       --shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.6;
@@ -199,11 +203,22 @@
       .container {
         padding: 12px;
       }
-      h1 { font-size: 1.4em; }
-      h2 { font-size: 1.1em; }
-      h3 { font-size: 1em; }
-      table { font-size: 0.85em; }
-      th, td { padding: 6px; font-size: 0.85em; }
+      h1 {
+        font-size: 1.4em;
+      }
+      h2 {
+        font-size: 1.1em;
+      }
+      h3 {
+        font-size: 1em;
+      }
+      table {
+        font-size: 0.85em;
+      }
+      th, td {
+        padding: 6px;
+        font-size: 0.85em;
+      }
       .intro,
       .place-card,
       .hotel-card,
@@ -266,7 +281,6 @@
   </style>
 </head>
 <body>
-  <!-- Кнопка переключения темы -->
   <button id="theme-toggle" aria-label="Переключить тему">🌓</button>
 
   <div class="container">
@@ -285,14 +299,12 @@
       <p>Справочник посёлка Талинка — независимый информационный ресурс, созданный для жителей и гостей Октябрьского района ХМАО. Здесь вы найдёте актуальные расписания автобусов, контакты госучреждений, мастеров, такси и гостиниц. Проект обновляется регулярно и основан на открытых данных и информации, предоставленной местными специалистами.</p>
     </div>
 
-    <!-- Статья 1: О посёлке -->
     <div class="article-section" id="about-place">
       <h2>📍 О посёлке Талинка</h2>
       <p>Талинка — посёлок городского типа в Октябрьском районе Ханты-Мансийского автономного округа. Расположен на трассе Р404, в <strong>106 км от Нягани</strong> и в <strong>200 км от Ханты-Мансийска</strong>. Это важный транспортный узел региона, через который проходят основные автобусные маршруты между крупными городами округа.</p>
       <p>В Талинке работают школа, детский сад, поликлиника, отделение МФЦ, а также множество частных мастеров и предпринимателей, предоставляющих услуги населению.</p>
     </div>
 
-    <!-- Статья 2: Как добраться -->
     <div class="article-section">
       <h2>🚌 Как добраться до Талинки</h2>
       <p>Основной способ добраться — на автобусе. Регулярное сообщение налажено с Няганью и Ханты-Мансийском. Также доступны частные рейсы:</p>
@@ -304,7 +316,6 @@
       <p><a href="https://bilet.do/" target="_blank" style="font-weight:bold; color:var(--accent-color); text-decoration:underline;">👉 Заказать билет на bilet.do</a></p>
     </div>
 
-    <!-- Транспорт -->
     <div id="transport">
       <h2>🚌 Маршрутный транспорт</h2>
 
@@ -385,7 +396,6 @@
       </div>
     </div>
 
-    <!-- Госуслуги -->
     <div id="services">
       <h2>🏥 Экстренные и госуслуги</h2>
 
@@ -399,7 +409,6 @@
       <div class="service-item">🏠 <strong>ЖКУ:</strong> <a href="tel:+79821456425">+7 982 145 64 25</a></div>
       <div class="service-item">⚡ <strong>РЭС-Запад:</strong> <a href="tel:+73467226013">+7 346 722 60 13</a></div>
 
-      <!-- Паспортный стол -->
       <h2>🛂 Паспортный стол</h2>
       <p><strong>ОВМ ОМВД России по Октябрьскому району</strong></p>
       <div class="table-wrapper">
@@ -416,7 +425,6 @@
       </div>
       <p><strong>Запись по телефону:</strong> <a href="tel:+73467260930">+7 346 726 09 30</a></p>
 
-      <!-- Нотариус -->
       <h2>⚖️ Нотариус Колесник Н.Н.</h2>
       <p><strong>Адрес:</strong> мкр. Центральный, д. 55, Талинка, ХМАО</p>
       <p><strong>Телефон:</strong> <a href="tel:+79227775323">+7 922 777 53 23</a><br>
@@ -427,7 +435,6 @@
       </p>
     </div>
 
-    <!-- Где можно перекусить -->
     <h2>🍽 Где можно перекусить</h2>
     <div class="place-card">
       <h3>🍣 суши-бар ТУНЕЦ 🍕</h3>
@@ -443,7 +450,6 @@
       <p><strong>⏰ Время работы:</strong> 11:00–22:00</p>
     </div>
 
-    <!-- Жильё и гостиницы -->
     <h2>🛏 Жильё и гостиницы</h2>
 
     <div class="hotel-card">
@@ -470,7 +476,6 @@
       <p><strong>🕒 Режим работы:</strong> Круглосуточно</p>
     </div>
 
-    <!-- Мастера -->
     <div id="masters">
       <h2>👩‍🔧 Мастера и специалисты</h2>
 
@@ -535,7 +540,6 @@
       </div>
     </div>
 
-    <!-- Такси -->
     <div id="taxi">
       <h2>🚗 Такси</h2>
       <div class="taxi-card"><strong>📞</strong> <a href="tel:+79088871167">+7 908 887 11 67</a></div>
@@ -543,7 +547,6 @@
       <div class="taxi-card"><strong>📞</strong> <a href="tel:+79088887842">+7 908 888 78 42</a></div>
     </div>
 
-    <!-- О сайте -->
     <div class="about-section" id="about-site">
       <h2>ℹ️ О справочнике</h2>
       <p>Этот сайт создан как общественный ресурс для жителей посёлка Талинка и гостей региона. Все данные собраны из открытых источников и предоставлены местными специалистами.</p>
@@ -556,60 +559,53 @@
       <p><strong>Обновлено:</strong> декабрь 2025</p>
     </div>
 
-    <!-- Политика конфиденциальности -->
     <div class="privacy-section">
       <h2>🔒 Политика конфиденциальности</h2>
       <p>Сайт не собирает персональные данные пользователей. В будущем может использоваться реклама от Google или Яндекс. Используя сайт, вы соглашаетесь с политикой cookies этих систем. Сайт не использует аналитику.</p>
     </div>
 
-    <!-- Футер -->
     <div class="footer-note">
       <p>© 2025 Талинка.СПРАВОЧНИК | <a href="#top">Наверх</a></p>
     </div>
-
   </div>
 
-  <!-- Скрипт копирования email -->
   <script>
     function copyEmail(email) {
-      // Копируем в буфер
-      navigator.clipboard.writeText(email).catch(() => {
-        // Fallback для старых браузеров
-        const textArea = document.createElement("textarea");
-        textArea.value = email;
-        textArea.style.position = "fixed";
-        textArea.style.opacity = "0";
-        document.body.appendChild(textArea);
-        textArea.select();
+      navigator.clipboard.writeText(email).then(() => {
+        const btn = event.target;
+        const original = btn.textContent;
+        btn.textContent = "Скопировано!";
+        setTimeout(() => btn.textContent = original, 1000);
+      }).catch(() => {
+        const ta = document.createElement("textarea");
+        ta.value = email;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
         document.execCommand("copy");
-        document.body.removeChild(textArea);
+        document.body.removeChild(ta);
+        const btn = event.target;
+        const original = btn.textContent;
+        btn.textContent = "Скопировано!";
+        setTimeout(() => btn.textContent = original, 1000);
       });
-
-      // Открываем почту
-      window.location.href = `mailto:${email}`;
-
-      // Показываем подсказку (можно убрать, если мешает)
-      alert(`Email ${email} скопирован. Открывается почта...`);
     }
 
-    // Сохранение и загрузка темы
     document.addEventListener('DOMContentLoaded', () => {
-      const toggleBtn = document.getElementById('theme-toggle');
+      const toggle = document.getElementById('theme-toggle');
       const body = document.body;
-
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      if (savedTheme === 'dark') {
+      if (localStorage.getItem('theme') === 'dark') {
         body.classList.add('dark-theme');
-        toggleBtn.textContent = '☀️';
+        toggle.textContent = '☀️';
       } else {
-        toggleBtn.textContent = '🌙';
+        toggle.textContent = '🌙';
       }
-
-      toggleBtn.addEventListener('click', () => {
+      toggle.addEventListener('click', () => {
         body.classList.toggle('dark-theme');
-        const isDark = body.classList.contains('dark-theme');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        toggleBtn.textContent = isDark ? '☀️' : '🌙';
+        const dark = body.classList.contains('dark-theme');
+        localStorage.setItem('theme', dark ? 'dark' : 'light');
+        toggle.textContent = dark ? '☀️' : '🌙';
       });
     });
   </script>
