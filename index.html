@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Финальная версия Талинка.СПРАВОЧНИК — 28 декабря 2025 -->
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
@@ -19,7 +18,7 @@
   <link rel="icon" href="image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
 
   <style id="theme-styles">
-    /* Светлая тема — по умолчанию */
+    /* Стили без изменений */
     :root {
       --bg-color: #f5f7fa;
       --container-bg: #fff;
@@ -39,7 +38,6 @@
       --shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
 
-    /* Тёмная тема */
     .dark-theme {
       --bg-color: #121212;
       --container-bg: #1e1e1e;
@@ -59,12 +57,7 @@
       --shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.6;
@@ -206,22 +199,11 @@
       .container {
         padding: 12px;
       }
-      h1 {
-        font-size: 1.4em;
-      }
-      h2 {
-        font-size: 1.1em;
-      }
-      h3 {
-        font-size: 1em;
-      }
-      table {
-        font-size: 0.85em;
-      }
-      th, td {
-        padding: 6px;
-        font-size: 0.85em;
-      }
+      h1 { font-size: 1.4em; }
+      h2 { font-size: 1.1em; }
+      h3 { font-size: 1em; }
+      table { font-size: 0.85em; }
+      th, td { padding: 6px; font-size: 0.85em; }
       .intro,
       .place-card,
       .hotel-card,
@@ -259,7 +241,6 @@
       font-weight: bold;
     }
 
-    /* Кнопка переключения темы */
     #theme-toggle {
       position: fixed;
       top: 15px;
@@ -408,7 +389,6 @@
     <div id="services">
       <h2>🏥 Экстренные и госуслуги</h2>
 
-      <!-- Исправленный блок: номер телефона под надписью -->
       <div class="service-item">
         📞 <strong>Регистратура ТВА:</strong> <a href="tel:+73467257480">+7 346 725 74 80</a>
       </div>
@@ -440,7 +420,11 @@
       <h2>⚖️ Нотариус Колесник Н.Н.</h2>
       <p><strong>Адрес:</strong> мкр. Центральный, д. 55, Талинка, ХМАО</p>
       <p><strong>Телефон:</strong> <a href="tel:+79227775323">+7 922 777 53 23</a><br>
-      <strong>E-mail:</strong> <a href="mailto:not.230424@mail.ru">not.230424@mail.ru</a></p>
+      <strong>E-mail:</strong>
+      <button onclick="copyEmail('not.230424@mail.ru')" style="background:none; border:none; color:var(--link-color); text-decoration:underline; cursor:pointer; font-size:0.95em;">
+        not.230424@mail.ru
+      </button>
+      </p>
     </div>
 
     <!-- Где можно перекусить -->
@@ -510,7 +494,6 @@
         <p><strong>Связь:</strong> <a href="https://t.me/bondaryushka" target="_blank">Telegram</a>, VK</p>
       </div>
 
-      <!-- НОВЫЙ МАСТЕР -->
       <div class="master-card">
         <h3>💅 Наталья — маникюр, педикюр, обучение</h3>
         <p><strong>VK:</strong> <a href="https://vk.ru/nata.nailtop" target="_blank">nata.nailtop</a></p>
@@ -565,7 +548,11 @@
       <h2>ℹ️ О справочнике</h2>
       <p>Этот сайт создан как общественный ресурс для жителей посёлка Талинка и гостей региона. Все данные собраны из открытых источников и предоставлены местными специалистами.</p>
       <p><strong>Разработчик:</strong> Дмитрий Геннадьевич Киласония</p>
-      <p><strong>Контакт:</strong> <a href="mailto:89505319494@mail.ru">89505319494@mail.ru</a></p>
+      <p><strong>Контакт:</strong>
+      <button onclick="copyEmail('89505319494@mail.ru')" style="background:none; border:none; color:var(--link-color); text-decoration:underline; cursor:pointer; font-size:0.95em;">
+        89505319494@mail.ru
+      </button>
+      </p>
       <p><strong>Обновлено:</strong> декабрь 2025</p>
     </div>
 
@@ -582,22 +569,42 @@
 
   </div>
 
+  <!-- Скрипт копирования email -->
   <script>
+    function copyEmail(email) {
+      // Копируем в буфер
+      navigator.clipboard.writeText(email).catch(() => {
+        // Fallback для старых браузеров
+        const textArea = document.createElement("textarea");
+        textArea.value = email;
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+      });
+
+      // Открываем почту
+      window.location.href = `mailto:${email}`;
+
+      // Показываем подсказку (можно убрать, если мешает)
+      alert(`Email ${email} скопирован. Открывается почта...`);
+    }
+
     // Сохранение и загрузка темы
     document.addEventListener('DOMContentLoaded', () => {
       const toggleBtn = document.getElementById('theme-toggle');
       const body = document.body;
 
-      // Проверяем сохранённую тему
       const savedTheme = localStorage.getItem('theme') || 'light';
       if (savedTheme === 'dark') {
         body.classList.add('dark-theme');
-        toggleBtn.textContent = '☀️'; // Солнце — вернуться к светлой
+        toggleBtn.textContent = '☀️';
       } else {
-        toggleBtn.textContent = '🌙'; // Луна — переключить на тёмную
+        toggleBtn.textContent = '🌙';
       }
 
-      // Переключение темы
       toggleBtn.addEventListener('click', () => {
         body.classList.toggle('dark-theme');
         const isDark = body.classList.contains('dark-theme');
