@@ -571,25 +571,23 @@
 
   <script>
     function copyEmail(email) {
-      navigator.clipboard.writeText(email).then(() => {
-        const btn = event.target;
-        const original = btn.textContent;
-        btn.textContent = "Скопировано!";
-        setTimeout(() => btn.textContent = original, 1000);
-      }).catch(() => {
-        const ta = document.createElement("textarea");
-        ta.value = email;
-        ta.style.position = "fixed";
-        ta.style.opacity = "0";
-        document.body.appendChild(ta);
-        ta.select();
+      const textArea = document.createElement("textarea");
+      textArea.value = email;
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      textArea.style.pointerEvents = "none";
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
         document.execCommand("copy");
-        document.body.removeChild(ta);
         const btn = event.target;
         const original = btn.textContent;
         btn.textContent = "Скопировано!";
         setTimeout(() => btn.textContent = original, 1000);
-      });
+      } catch (err) {
+        alert("Email скопирован: " + email);
+      }
+      document.body.removeChild(textArea);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
