@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Справочник посёлка Талинка: расписание транспорта, телефоны, госуслуги, мастера, такси, гостиницы — всё в одном месте.">
-  <meta name="keywords" content="Талинка, справочник, транспорт, телефоны, услуги, гостиницы, мастера, такси, Октябрьский район, ХМАО">
+  <meta name="description" content="Справочник посёлка Талинка: расписание транспорта, телефоны, госуслуги, мастера, такси, гостиницы, автоуслуги — всё в одном месте.">
+  <meta name="keywords" content="Талинка, справочник, транспорт, телефоны, услуги, гостиницы, мастера, такси, Октябрьский район, ХМАО, автоуслуги, пожарная">
   <meta name="author" content="Dmitry Gennadievich Kilasonia">
   <meta property="og:title" content="Талинка.СПРАВОЧНИК">
-  <meta property="og:description" content="Полный справочник посёлка Талинка: транспорт, услуги, мастера, такси, гостиницы и многое другое.">
+  <meta property="og:description" content="Полный справочник посёлка Талинка: транспорт, услуги, мастера, такси, гостиницы, автоуслуги и многое другое.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://talinka-spravochnik-v2.vercel.app/">
   <meta property="og:image" content="https://talinka-spravochnik-v2.vercel.app/favicon.ico">
@@ -33,6 +33,8 @@
       --card-border-green: #c8e6c9;
       --card-bg-yellow: #fff8e1;
       --card-border-yellow: #ffe0b2;
+      --card-bg-orange: #fff3e0;
+      --card-border-orange: #ffe0b2;
       --footer-color: #666;
       --shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
@@ -52,6 +54,8 @@
       --card-border-green: #3a4a3a;
       --card-bg-yellow: #2a281e;
       --card-border-yellow: #3a3828;
+      --card-bg-orange: #2a251e;
+      --card-border-orange: #3a3528;
       --footer-color: #aaa;
       --shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
@@ -166,6 +170,7 @@
     .hotel-card,
     .master-card,
     .taxi-card,
+    .auto-card,
     .about-section,
     .privacy-section,
     .article-section {
@@ -176,7 +181,8 @@
     }
 
     .place-card,
-    .hotel-card {
+    .hotel-card,
+    .auto-card {
       background: var(--card-bg-light);
       border: 1px solid var(--card-border-light);
     }
@@ -224,6 +230,7 @@
       .hotel-card,
       .master-card,
       .taxi-card,
+      .auto-card,
       .about-section,
       .privacy-section,
       .article-section {
@@ -278,6 +285,24 @@
     #theme-toggle:hover {
       transform: scale(1.1);
     }
+
+    /* Исправление навигации для мобильных устройств */
+    @media (max-width: 600px) {
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        padding: 8px;
+        font-size: 0.9em;
+      }
+      nav a {
+        margin: 0;
+        padding: 4px 8px;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -287,16 +312,17 @@
     <h1 id="top">Талинка.СПРАВОЧНИК</h1>
 
     <nav>
-      <a href="#about-place">О Талинке</a> |
-      <a href="#transport">Транспорт</a> |
-      <a href="#services">Услуги</a> |
-      <a href="#masters">Мастера</a> |
-      <a href="#taxi">Такси</a> |
+      <a href="#about-place">О Талинке</a>
+      <a href="#transport">Транспорт</a>
+      <a href="#services">Услуги</a>
+      <a href="#masters">Мастера</a>
+      <a href="#auto">Авто</a>
+      <a href="#taxi">Такси</a>
       <a href="#about-site">О сайте</a>
     </nav>
 
     <div class="intro">
-      <p>Справочник посёлка Талинка — независимый информационный ресурс, созданный для жителей и гостей Октябрьского района ХМАО. Здесь вы найдёте актуальные расписания автобусов, контакты госучреждений, мастеров, такси и гостиниц. Проект обновляется регулярно и основан на открытых данных и информации, предоставленной местными специалистами.</p>
+      <p>Справочник посёлка Талинка — независимый информационный ресурс, созданный для жителей и гостей Октябрьского района ХМАО. Здесь вы найдёте актуальные расписания автобусов, контакты госучреждений, мастеров, такси, гостиниц и автоуслуг. Проект обновляется регулярно и основан на открытых данных и информации, предоставленной местными специалистами.</p>
     </div>
 
     <div class="article-section" id="about-place">
@@ -403,6 +429,7 @@
         📞 <strong>Регистратура ТВА:</strong> <a href="tel:+73467257480">+7 346 725 74 80</a>
       </div>
 
+      <div class="service-item">🔥 <strong>Пожарная часть:</strong> <a href="tel:+73467249140">+7 (34672) 4-91-40</a></div>
       <div class="service-item">🛠️ <strong>Диспетчер УТС:</strong> <a href="tel:+79044508335">+7 904 450 83 35</a></div>
       <div class="service-item">📝 <strong>МФЦ:</strong> <a href="tel:+73467833906">+7 346 783 39 06</a> *130#</div>
       <div class="service-item">🚑 <strong>Скорая:</strong> <a href="tel:+73467249093">+7 346 724 90 93</a></div>
@@ -537,6 +564,22 @@
         <p><strong>📞 Телефоны:</strong></p>
         <p>• <a href="tel:+79221422910">+7 922 142 29 10</a></p>
         <p>• <a href="tel:+79044507726">+7 904 450 77 26</a></p>
+      </div>
+    </div>
+
+    <!-- АВТОУСЛУГИ -->
+    <div id="auto">
+      <h2>🚗 Автоуслуги</h2>
+
+      <div class="auto-card">
+        <h3>🔧 Мир АВТО</h3>
+        <p>автозапчасти, автомойка, грузовой шиномонтаж</p>
+        <p><strong>📞 Телефон:</strong> <a href="tel:+79505333222">+7 950-533-32-22</a></p>
+      </div>
+
+      <div class="auto-card">
+        <h3>🔧 СТО, АВТОМОЙКА, ШИНОМОНТАЖ</h3>
+        <p><strong>📞 Телефон:</strong> <a href="tel:+79527144000">+7-952-714-40-00</a></p>
       </div>
     </div>
 
