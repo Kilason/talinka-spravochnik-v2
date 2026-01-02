@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Погода в посёлке Талинка, ХМАО. Текущая температура и прогноз на 3 дня с указанием дневной и ночной температуры.">
+  <meta name="keywords" content="погода Талинка, Талинка ХМАО, прогноз погоды, погода Октябрьский район">
+  <meta name="author" content="Dmitry Gennadievich Kilasonia">
+  <title>Погода — Талинка.СПРАВОЧНИК</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-color: #f5f7fa;
+      --container-bg: #fff;
+      --text-color: #000;
+      --header-color: #1a3d6d;
+      --border-color: #ddd;
+      --accent-color: #1976d2;
+      --shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .dark-theme {
+      --bg-color: #121212;
+      --container-bg: #1e1e1e;
+      --text-color: #e0e0e0;
+      --header-color: #64b5f6;
+      --border-color: #444;
+      --accent-color: #4fc3f7;
+      --shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background: var(--bg-color);
+      margin: 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--container-bg);
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--header-color);
+      margin-bottom: 20px;
+      font-size: 1.6em;
+      padding-top: 10px;
+    }
+
+    .weather-card {
+      background: var(--container-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px;
+      margin: 12px 0;
+    }
+
+    .weather-header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .current-weather {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      margin: 20px 0;
+      font-size: 1.4em;
+    }
+
+    .forecast {
+      margin-top: 24px;
+    }
+
+    .forecast h2 {
+      margin-bottom: 12px;
+      color: var(--header-color);
+      font-size: 1.2em;
+    }
+
+    .forecast-day {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .loading, .error {
+      text-align: center;
+      padding: 20px;
+      color: var(--text-color);
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    #theme-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: var(--container-bg);
+      border: 1px solid var(--border-color);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: all 0.3s;
+    }
+
+    #theme-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.4em;
+      }
+      .current-weather {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 1.2em;
+      }
+      .forecast-day {
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button id="theme-toggle" aria-label="Переключить тему">🌓</button>
+
+  <div class="container">
+    <h1>🌤️ Погода в Талинке</h1>
+
+    <div style="text-align: center; margin-bottom: 16px;">
+      <a href="index.html" style="font-weight: bold; color: var(--accent-color); text-decoration: underline;">← Назад к справочнику</a>
+    </div>
+
+    <div class="weather-card">
+      <div class="weather-header">
+        <p>Посёлок Талинка, ХМАО</p>
+        <p>Координаты: 61.1833° с.ш., 64.7167° в.д.</p>
+      </div>
+
+      <div id="weather-content">
+        <div class="loading">Загрузка погоды...</div>
+      </div>
+    </div>
+
+    <p style="text-align: center; margin-top: 20px; font-size: 0.9em; color: #666;">
+      Данные обновляются каждые 15 минут<br>
+      Источник: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>
+    </p>
+  </div>
+
+  <script>
+    const LAT = 61.1833;
+    const LON = 64.7167;
+
+    function formatDate(date) {
+      const days = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+      const months = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
+      return `${days[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]}`;
+    }
+
+    function getWeatherDescription(weatherCode) {
+      if (weatherCode >= 200 && weatherCode < 300) return 'Гроза';
+      if (weatherCode >= 300 && weatherCode < 400) return 'Дождь';
+      if (weatherCode >= 500 && weatherCode < 600) return 'Дождь';
+      if (weatherCode >= 600 && weatherCode < 700) return 'Снег';
+      if (weatherCode >= 700 && weatherCode < 800) return 'Туман';
+      if (weatherCode === 800) return 'Ясно';
+      if (weatherCode > 800) return 'Облачно';
+      return 'Погода';
+    }
+
+    async function loadWeather() {
+      try {
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min&forecast_days=4&timezone=Europe/Moscow`;
+        const response = await fetch(url);
+        const data = await response.json();
+
+        const currentTemp = Math.round(data.current.temperature_2m);
+        const currentDesc = getWeatherDescription(data.current.weather_code);
+
+        let forecastHtml = '<div class="forecast"><h2>Прогноз на ближайшие дни</h2>';
+        for (let i = 0; i < 4; i++) {
+          const date = new Date();
+          date.setDate(date.getDate() + i);
+          const dayStr = formatDate(date);
+          const min = Math.round(data.daily.temperature_2m_min[i]);
+          const max = Math.round(data.daily.temperature_2m_max[i]);
+          const desc = getWeatherDescription(data.daily.weather_code[i]);
+          forecastHtml += `<div class="forecast-day"><span>${dayStr}</span> <span>Погода днём ${max}°, ночью ${min}°</span></div>`;
+        }
+        forecastHtml += '</div>';
+
+        document.getElementById('weather-content').innerHTML = `
+          <div class="current-weather">
+            <div>${currentDesc}</div>
+            <div><strong>${currentTemp}°C</strong></div>
+          </div>
+          ${forecastHtml}
+        `;
+      } catch (err) {
+        document.getElementById('weather-content').innerHTML = `
+          <div class="error">Не удалось загрузить погоду.<br>Попробуйте обновить страницу позже.</div>
+        `;
+      }
+    }
+
+    // Переключение темы
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('theme-toggle');
+      const body = document.body;
+      if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-theme');
+        toggle.textContent = '☀️';
+      } else {
+        toggle.textContent = '🌙';
+      }
+      toggle.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+        const dark = body.classList.contains('dark-theme');
+        localStorage.setItem('theme', dark ? 'dark' : 'light');
+        toggle.textContent = dark ? '☀️' : '🌙';
+      });
+    });
+
+    // Загрузка погоды
+    loadWeather();
+  </script>
+</body>
+</html>
