@@ -198,25 +198,44 @@
     }
 
     function getWeatherDescription(weatherCode) {
-      if (weatherCode >= 200 && weatherCode < 300) return 'Гроза';
-      if (weatherCode >= 300 && weatherCode < 400) return 'Дождь';
-      if (weatherCode >= 500 && weatherCode < 600) return 'Дождь';
-      if (weatherCode >= 600 && weatherCode < 700) return 'Снег';
-      if (weatherCode >= 700 && weatherCode < 800) return 'Туман';
-      if (weatherCode === 800) return 'Ясно';
-      if (weatherCode > 800) return 'Облачно';
+      if (weatherCode === 0) return 'Ясно';
+      if (weatherCode === 1 || weatherCode === 2) return 'Переменная облачность';
+      if (weatherCode === 3) return 'Пасмурно';
+      if (weatherCode >= 45 && weatherCode <= 48) return 'Туман';
+      if (weatherCode >= 51 && weatherCode <= 57) return 'Дождь';
+      if (weatherCode >= 61 && weatherCode <= 67) return 'Дождь';
+      if (weatherCode >= 71 && weatherCode <= 77) return 'Снег';
+      if (weatherCode >= 80 && weatherCode <= 82) return 'Ливень';
+      if (weatherCode >= 95 && weatherCode <= 99) return 'Гроза';
       return 'Погода';
+    }
+
+    function getWeatherIcon(weatherCode) {
+      if (weatherCode === 0) return '☀️';
+      if (weatherCode === 1 || weatherCode === 2) return '🌤️';
+      if (weatherCode === 3) return '☁️';
+      if (weatherCode >= 45 && weatherCode <= 48) return '🌫️';
+      if (weatherCode >= 51 && weatherCode <= 57) return '🌧️';
+      if (weatherCode >= 61 && weatherCode <= 67) return '🌧️';
+      if (weatherCode >= 71 && weatherCode <= 77) return '❄️';
+      if (weatherCode >= 80 && weatherCode <= 82) return '🌦️';
+      if (weatherCode >= 95 && weatherCode <= 99) return '⚡';
+      return '🌤️';
     }
 
     async function loadWeather() {
       try {
-        const url = `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min&forecast_days=4&timezone=Europe/Moscow`;
+        // Запрос: current_weather (с кодом) + daily (без кода)
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current_weather=true&daily=temperature_2m_max,temperature_2m_min&forecast_days=4&timezone=Europe/Moscow`;
         const response = await fetch(url);
         const data = await response.json();
 
-        const currentTemp = Math.round(data.current.temperature_2m);
-        const currentDesc = getWeatherDescription(data.current.weather_code);
+        // Текущая погода — иконка + описание + температура
+        const currentTemp = Math.round(data.current_weather.temperature);
+        const currentDesc = getWeatherDescription(data.current_weather.weathercode);
+        const currentIcon = getWeatherIcon(data.current_weather.weathercode);
 
+        // Прогноз — только температуры
         let forecastHtml = '<div class="forecast"><h2>Прогноз на ближайшие дни</h2>';
         for (let i = 0; i < 4; i++) {
           const date = new Date();
@@ -224,14 +243,13 @@
           const dayStr = formatDate(date);
           const min = Math.round(data.daily.temperature_2m_min[i]);
           const max = Math.round(data.daily.temperature_2m_max[i]);
-          const desc = getWeatherDescription(data.daily.weather_code[i]);
           forecastHtml += `<div class="forecast-day"><span>${dayStr}</span> <span>Погода днём ${max}°, ночью ${min}°</span></div>`;
         }
         forecastHtml += '</div>';
 
         document.getElementById('weather-content').innerHTML = `
           <div class="current-weather">
-            <div>${currentDesc}</div>
+            <div>${currentIcon} ${currentDesc}</div>
             <div><strong>${currentTemp}°C</strong></div>
           </div>
           ${forecastHtml}
