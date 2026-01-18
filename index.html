@@ -37,6 +37,8 @@
       --card-border-orange: #ffe0b2;
       --footer-color: #666;
       --shadow: 0 2px 10px rgba(0,0,0,0.08);
+      --emergency-bg: #ffebee;
+      --emergency-border: #f44336;
     }
 
     .dark-theme {
@@ -58,6 +60,8 @@
       --card-border-orange: #3a3528;
       --footer-color: #aaa;
       --shadow: 0 2px 10px rgba(0,0,0,0.3);
+      --emergency-bg: #2c1a1a;
+      --emergency-border: #f44336;
     }
 
     * {
@@ -166,6 +170,22 @@
       border: 1px solid var(--card-border-light);
     }
 
+    .emergency-panel {
+      background: var(--emergency-bg);
+      padding: 14px;
+      border-radius: 8px;
+      margin: 16px 0;
+      border-left: 4px solid var(--emergency-border);
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+
+    .emergency-panel strong {
+      color: var(--emergency-border);
+      display: block;
+      margin-bottom: 6px;
+    }
+
     .place-card,
     .hotel-card,
     .master-card,
@@ -233,7 +253,8 @@
       .auto-card,
       .about-section,
       .privacy-section,
-      .article-section {
+      .article-section,
+      .emergency-panel {
         padding: 10px;
         font-size: 0.9em;
       }
@@ -320,6 +341,18 @@
       <a href="#taxi">Такси</a>
       <a href="#about-site">О сайте</a>
     </nav>
+
+    <!-- ЭКСТРЕННЫЕ КОНТАКТЫ В ШАПКЕ — КАЖДЫЙ НА ОТДЕЛЬНОЙ СТРОКЕ -->
+    <div class="emergency-panel">
+      <strong>🚨 Экстренные и госуслуги:</strong>
+      📞 Регистратура ТВА: <a href="tel:+73467257480">+7 346 725 74 80</a><br>
+      🔥 Пожарная: <a href="tel:+73467249140">+7 34672 49140</a><br>
+      🛠️ Диспетчер УТС: <a href="tel:+79044508335">+7 904 450 8335</a><br>
+      📝 МФЦ: <a href="tel:+73467833906">+7 346 783 3906</a> *130#<br>
+      🚑 Скорая: <a href="tel:+73467249093">+7 346 724 9093</a><br>
+      🏠 ЖКУ: <a href="tel:+79821456425">+7 982 145 6425</a><br>
+      ⚡ РЭС-Запад: <a href="tel:+73467226013">+7 346 722 6013</a>
+    </div>
 
     <div class="intro">
       <p>Справочник посёлка Талинка — независимый информационный ресурс, созданный для жителей и гостей Октябрьского района ХМАО. Здесь вы найдёте актуальные расписания автобусов, контакты госучреждений, мастеров, такси, гостиниц и автоуслуг. Проект обновляется регулярно и основан на открытых данных и информации, предоставленной местными специалистами.</p>
@@ -423,19 +456,6 @@
     </div>
 
     <div id="services">
-      <h2>🏥 Экстренные и госуслуги</h2>
-
-      <div class="service-item">
-        📞 <strong>Регистратура ТВА:</strong> <a href="tel:+73467257480">+7 346 725 74 80</a>
-      </div>
-
-      <div class="service-item">🔥 <strong>Пожарная часть:</strong> <a href="tel:+73467249140">+7 34672 49140</a></div>
-      <div class="service-item">🛠️ <strong>Диспетчер УТС:</strong> <a href="tel:+79044508335">+7 904 450 8335</a></div>
-      <div class="service-item">📝 <strong>МФЦ:</strong> <a href="tel:+73467833906">+7 346 783 3906</a> *130#</div>
-      <div class="service-item">🚑 <strong>Скорая:</strong> <a href="tel:+73467249093">+7 346 724 9093</a></div>
-      <div class="service-item">🏠 <strong>ЖКУ:</strong> <a href="tel:+79821456425">+7 982 145 6425</a></div>
-      <div class="service-item">⚡ <strong>РЭС-Запад:</strong> <a href="tel:+73467226013">+7 346 722 6013</a></div>
-
       <h2>🛂 Паспортный стол</h2>
       <p><strong>ОВМ ОМВД России по Октябрьскому району</strong></p>
       <div class="table-wrapper">
@@ -503,7 +523,7 @@
       <p><strong>🕒 Режим работы:</strong> Круглосуточно</p>
     </div>
 
-    <!-- НОВЫЙ БЛОК EAALEN7 -->
+    <!-- EAALEN7 -->
     <div class="hotel-card">
       <h3>🏠 EAALEN7 — аренда жилой недвижимости с обслуживанием</h3>
       <p><strong>📞 Телефон:</strong> <a href="tel:+79827827327">+7 982 782 73 27</a></p>
