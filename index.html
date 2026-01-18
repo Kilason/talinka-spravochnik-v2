@@ -39,6 +39,8 @@
       --shadow: 0 2px 10px rgba(0,0,0,0.08);
       --emergency-bg: #ffebee;
       --emergency-border: #f44336;
+      --er-bg: #e8f5e9;
+      --er-border: #4caf50;
     }
 
     .dark-theme {
@@ -62,6 +64,8 @@
       --shadow: 0 2px 10px rgba(0,0,0,0.3);
       --emergency-bg: #2c1a1a;
       --emergency-border: #f44336;
+      --er-bg: #1b2a1c;
+      --er-border: #4caf50;
     }
 
     * {
@@ -170,20 +174,37 @@
       border: 1px solid var(--card-border-light);
     }
 
-    .emergency-panel {
-      background: var(--emergency-bg);
+    .emergency-panel,
+    .er-panel {
       padding: 14px;
       border-radius: 8px;
       margin: 16px 0;
-      border-left: 4px solid var(--emergency-border);
       font-size: 0.95em;
       line-height: 1.5;
     }
 
-    .emergency-panel strong {
-      color: var(--emergency-border);
+    .emergency-panel {
+      background: var(--emergency-bg);
+      border-left: 4px solid var(--emergency-border);
+    }
+
+    .er-panel {
+      background: var(--er-bg);
+      border-left: 4px solid var(--er-border);
+    }
+
+    .emergency-panel strong,
+    .er-panel strong {
       display: block;
       margin-bottom: 6px;
+    }
+
+    .emergency-panel strong {
+      color: var(--emergency-border);
+    }
+
+    .er-panel strong {
+      color: var(--er-border);
     }
 
     .place-card,
@@ -254,7 +275,8 @@
       .about-section,
       .privacy-section,
       .article-section,
-      .emergency-panel {
+      .emergency-panel,
+      .er-panel {
         padding: 10px;
         font-size: 0.9em;
       }
@@ -342,7 +364,7 @@
       <a href="#about-site">О сайте</a>
     </nav>
 
-    <!-- ЭКСТРЕННЫЕ КОНТАКТЫ В ШАПКЕ — КАЖДЫЙ НА ОТДЕЛЬНОЙ СТРОКЕ -->
+    <!-- ЭКСТРЕННЫЕ КОНТАКТЫ В ШАПКЕ -->
     <div class="emergency-panel">
       <strong>🚨 Экстренные и госуслуги:</strong>
       📞 Регистратура ТВА: <a href="tel:+73467257480">+7 346 725 74 80</a><br>
@@ -352,6 +374,13 @@
       🚑 Скорая: <a href="tel:+73467249093">+7 346 724 9093</a><br>
       🏠 ЖКУ: <a href="tel:+79821456425">+7 982 145 6425</a><br>
       ⚡ РЭС-Запад: <a href="tel:+73467226013">+7 346 722 6013</a>
+    </div>
+
+    <!-- ОНЛАЙН ЗАПИСЬ К ВРАЧУ -->
+    <div class="er-panel">
+      <strong>🏥 Онлайн запись к врачу</strong><br>
+      <strong>Регистратура ЮГРА:</strong><br>
+      <a href="https://er.dzhmao.ru" target="_blank" rel="noopener">👉 Записаться на приём</a>
     </div>
 
     <div class="intro">
@@ -554,11 +583,6 @@
       </div>
 
       <div class="master-card">
-        <h3>💅 Наталья — маникюр, педикюр, обучение</h3>
-        <p><strong>VK:</strong> <a href="https://vk.ru/nata.nailtop" target="_blank">nata.nailtop</a></p>
-      </div>
-
-      <div class="master-card">
         <h3>🧱 Талинка Ремонт</h3>
         <p>Квартиры, санузлы, электрика, сантехника, отделка.</p>
         <p><strong>Телефон:</strong> <a href="tel:+79822169611">+7 982 216 9611</a><br>
@@ -612,9 +636,13 @@
       <p>Этот сайт создан как общественный ресурс для жителей посёлка Талинка и гостей региона. Все данные собраны из открытых источников и предоставлены местными специалистами.</p>
       <p><strong>Разработчик:</strong> Дмитрий Геннадьевич Киласония</p>
       <p><strong>Контакт:</strong>
-      <button onclick="copyEmail('89505319494@mail.ru')" style="background:none; border:none; color:var(--link-color); text-decoration:underline; cursor:pointer; font-size:0.95em;">
-        89505319494@mail.ru
-      </button>
+        <button onclick="copyEmail('89505319494@mail.ru')" style="background:none; border:none; color:var(--link-color); text-decoration:underline; cursor:pointer; font-size:0.95em;">
+          89505319494@mail.ru
+        </button>
+      </p>
+      <p><strong>Добавить информацию:</strong>
+        <a href="https://t.me/Romanov_Petr10" target="_blank" rel="noopener">@Romanov_Petr10</a><br>
+        <em>Если хотите добавить свои контакты в справочник — пишите</em>
       </p>
       <p><strong>Обновлено:</strong> январь 2026</p>
     </div>
