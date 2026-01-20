@@ -329,6 +329,36 @@
       transform: scale(1.1);
     }
 
+    #scroll-to-top {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--container-bg);
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+    }
+
+    #scroll-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #scroll-to-top:hover {
+      transform: scale(1.1);
+    }
+
     @media (max-width: 600px) {
       nav {
         display: flex;
@@ -549,7 +579,6 @@
       <img src="https://i.ibb.co/XfxqgMrw/766a0dd01fac00ff84a85ecb87bfc373.png" alt="Логотип Пятёрочка" style="max-width: 150px; margin-top: 8px;">
     </div>
 
-    <!-- МАГАЗИН "СЕМЬЯ" -->
     <div class="place-card">
       <h3>🏪 Магазин "Семья"</h3>
       <p><strong>📍 Адрес:</strong> п. г. т. Талинка, Центральный микрорайон, 55</p>
@@ -574,16 +603,20 @@
 
     <div class="hotel-card">
       <h3>🏨 Гостиница «Самарская»</h3>
+      <p><strong>📍 Адрес:</strong> п. г. т. Талинка, Центральный микрорайон, 45</p>
       <p><strong>📞 Телефон:</strong> <a href="tel:+73467245046">+7 34672 45046</a></p>
       <p><strong>🕒 Режим работы:</strong> Круглосуточно</p>
+      <p><a href="https://yandex.ru/maps/?rtext=~61.549372,66.439227&rtt=auto" target="_blank" rel="noopener">📍 Проложить маршрут</a></p>
     </div>
 
     <div class="hotel-card">
       <h3>🏨 Гостиница «Алтай»</h3>
+      <p><strong>📍 Адрес:</strong> п. г. т. Талинка, Центральный микрорайон, 8</p>
       <p><strong>📞 Телефоны:</strong></p>
       <p>• <a href="tel:+79822016514">+7 982 201 6514</a></p>
       <p>• <a href="tel:+79125348316">+7 912 534 8316</a></p>
       <p><strong>🕒 Режим работы:</strong> Круглосуточно</p>
+      <p><a href="https://yandex.ru/maps/?rtext=~61.548442,66.444267&rtt=auto" target="_blank" rel="noopener">📍 Проложить маршрут</a></p>
     </div>
 
     <!-- EAALEN7 -->
@@ -683,6 +716,9 @@
     </div>
   </div>
 
+  <!-- Кнопка "наверх" -->
+  <button id="scroll-to-top" aria-label="Наверх" title="Наверх">👆</button>
+
   <script>
     function copyEmail(email) {
       const textArea = document.createElement("textarea");
@@ -718,6 +754,24 @@
         const dark = body.classList.contains('dark-theme');
         localStorage.setItem('theme', dark ? 'dark' : 'light');
         toggle.textContent = dark ? '☀️' : '🌙';
+      });
+
+      // Кнопка "наверх"
+      const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          scrollToTopBtn.classList.add('show');
+        } else {
+          scrollToTopBtn.classList.remove('show');
+        }
+      });
+
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       });
     });
   </script>
