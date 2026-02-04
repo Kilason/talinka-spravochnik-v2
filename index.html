@@ -9,8 +9,8 @@
   <meta property="og:title" content="Талинка.СПРАВОЧНИК">
   <meta property="og:description" content="Полный справочник посёлка Талинка: транспорт, услуги, мастера, такси, гостиницы, автоуслуги и многое другое.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://talinka-spravochnik-v2.vercel.app/">
-  <meta property="og:image" content="https://talinka-spravochnik-v2.vercel.app/favicon.ico">
+  <meta property="og:url" content="https://talinka-spravochnik-v2.vercel.app/ ">
+  <meta property="og:image" content="https://talinka-spravochnik-v2.vercel.app/favicon.ico ">
 
   <title>Талинка.СПРАВОЧНИК</title>
 
@@ -35,6 +35,8 @@
       --card-border-yellow: #ffe0b2;
       --card-bg-orange: #fff3e0;
       --card-border-orange: #ffe0b2;
+      --card-bg-purple: #f3e5f5;
+      --card-border-purple: #ce93d8;
       --footer-color: #666;
       --shadow: 0 2px 10px rgba(0,0,0,0.08);
       --emergency-bg: #ffebee;
@@ -60,6 +62,8 @@
       --card-border-yellow: #3a3828;
       --card-bg-orange: #2a251e;
       --card-border-orange: #3a3528;
+      --card-bg-purple: #2a252e;
+      --card-border-purple: #3a353e;
       --footer-color: #aaa;
       --shadow: 0 2px 10px rgba(0,0,0,0.3);
       --emergency-bg: #2c1a1a;
@@ -214,7 +218,8 @@
     .auto-card,
     .about-section,
     .privacy-section,
-    .article-section {
+    .article-section,
+    .education-card {
       margin: 12px 0;
       padding: 12px;
       border-radius: 6px;
@@ -223,7 +228,8 @@
 
     .place-card,
     .hotel-card,
-    .auto-card {
+    .auto-card,
+    .education-card {
       background: var(--card-bg-light);
       border: 1px solid var(--card-border-light);
     }
@@ -276,7 +282,8 @@
       .privacy-section,
       .article-section,
       .emergency-panel,
-      .er-panel {
+      .er-panel,
+      .education-card {
         padding: 10px;
         font-size: 0.9em;
       }
@@ -393,11 +400,12 @@
     <nav>
       <a href="pogoda.html">Погода</a>
       <a href="#about-place">О Талинке</a>
-      <a href="#stores">Магазины</a>
       <a href="#cafes">Кафе и еда</a>
+      <a href="#stores">Магазины</a>
       <a href="#transport">Транспорт</a>
       <a href="#services">Услуги</a>
       <a href="#masters">Мастера</a>
+      <a href="#education">Образование</a>
       <a href="#auto">Авто</a>
       <a href="#taxi">Такси</a>
       <a href="#hotels">Жильё и гостиницы</a>
@@ -420,7 +428,7 @@
     <div class="er-panel">
       <strong>🏥 Онлайн запись к врачу</strong><br>
       <strong>Регистратура ЮГРА:</strong><br>
-      <a href="https://er.dzhmao.ru" target="_blank" rel="noopener">👉 Записаться на приём</a>
+      <a href="https://er.dzhmao.ru " target="_blank" rel="noopener">👉 Записаться на приём</a>
     </div>
 
     <div class="intro">
@@ -431,17 +439,6 @@
       <h2>📍 О посёлке Талинка</h2>
       <p>Талинка — посёлок городского типа в Октябрьском районе Ханты-Мансийского автономного округа. Расположен на трассе Р404, в <strong>106 км от Нягани</strong> и в <strong>200 км от Ханты-Мансийска</strong>. Это важный транспортный узел региона, через который проходят основные автобусные маршруты между крупными городами округа.</p>
       <p>В Талинке работают школа, детский сад, поликлиника, отделение МФЦ, а также множество частных мастеров и предпринимателей, предоставляющих услуги населению.</p>
-    </div>
-
-    <div class="article-section">
-      <h2>🚌 Как добраться до Талинки</h2>
-      <p>Основной способ добраться — на автобусе. Регулярное сообщение налажено с Няганью и Ханты-Мансийском. Также доступны частные рейсы:</p>
-      <ul>
-        <li>Из Талинки в Нягань — отправление <strong>от мини-стадиона</strong></li>
-        <li>Из Нягани в Талинку — отправление <strong>от Центра занятости</strong></li>
-      </ul>
-      <p>Билеты на маршрут <strong>Талинка — Ханты-Мансийск</strong> можно заказать онлайн:</p>
-      <p><a href="https://bilet.do/" target="_blank" style="font-weight:bold; color:var(--accent-color); text-decoration:underline;">👉 Заказать билет на bilet.do</a></p>
     </div>
 
     <!-- КАФЕ И ЕДА -->
@@ -456,11 +453,11 @@
         <li>✨ «Счастливые часы»</li>
       </ul>
       <p><strong>📞 Телефон:</strong> <a href="tel:+79227704400">+7 922 770 4400</a></p>
-      <p><strong>🌐 Закажите онлайн:</strong> <a href="https://talinka.sushi-tunec.ru" target="_blank">talinka.sushi-tunec.ru</a></p>
+      <p><strong>🌐 Закажите онлайн:</strong> <a href="https://talinka.sushi-tunec.ru " target="_blank">talinka.sushi-tunec.ru</a></p>
       <p><strong>📍 Адрес:</strong> 1-й микрорайон, дом 51</p>
       <p><strong>⏰ Время работы:</strong> 11:00–22:00</p>
-      <p><a href="https://yandex.ru/maps/?rtext=~61.552565,66.442875&rtt=auto" target="_blank" rel="noopener">📍 Проложить маршрут</a></p>
-      <img src="https://i.ibb.co/qMBvTzWJ/logo-tunec.png" alt="Логотип суши-бара ТУНЕЦ" style="max-width: 150px; margin-top: 10px;">
+      <p><a href="https://yandex.ru/maps/?rtext=~61.552565 ,66.442875&rtt=auto" target="_blank" rel="noopener">📍 Проложить маршрут</a></p>
+      <img src="https://i.ibb.co/qMBvTzWJ/logo-tunec.png " alt="Логотип суши-бара ТУНЕЦ" style="max-width: 150px; margin-top: 10px;">
     </div>
 
     <!-- МАГАЗИНЫ -->
@@ -470,16 +467,16 @@
       <h3>🍷 Красное & Белое</h3>
       <p><strong>Адрес:</strong> ул. Первостроителей, 8, Талинка</p>
       <p><strong>🕒 Режим работы:</strong> пн–вс 8:00–22:05</p>
-      <p><a href="https://yandex.ru/maps/?rtext=~61.549937,66.449970&rtt=auto" target="_blank" rel="noopener">📍 Проложить маршрут</a></p>
-      <img src="https://i.ibb.co/Rpj9Rz98/regnum-picture-17228788426117-social.jpg" alt="Логотип Красное & Белое" style="max-width: 150px; margin-top: 8px;">
+      <p><a href="https://yandex.ru/maps/?rtext=~61.549937 ,66.449970&rtt=auto" target="_blank" rel="noopener">📍 Проложить маршрут</a></p>
+      <img src="https://i.ibb.co/Rpj9Rz98/regnum-picture-17228788426117-social.jpg " alt="Логотип Красное & Белое" style="max-width: 150px; margin-top: 8px;">
     </div>
 
     <div class="place-card">
       <h3>🛒 Пятёрочка</h3>
       <p><strong>Адрес:</strong> п. г. т. Талинка, Центральный микрорайон, 10</p>
       <p><strong>🕒 Режим работы:</strong> пн–вс 8:00–22:00</p>
-      <p><a href="https://yandex.ru/maps/?rtext=~61.549041,66.443149&rtt=auto" target="_blank" rel="noopener">📍 Проложить маршрут</a></p>
-      <img src="https://i.ibb.co/XfxqgMrw/766a0dd01fac00ff84a85ecb87bfc373.png" alt="Логотип Пятёрочка" style="max-width: 150px; margin-top: 8px;">
+      <p><a href="https://yandex.ru/maps/?rtext=~61.549041 ,66.443149&rtt=auto" target="_blank" rel="noopener">📍 Проложить маршрут</a></p>
+      <img src="https://i.ibb.co/XfxqgMrw/766a0dd01fac00ff84a85ecb87bfc373.png " alt="Логотип Пятёрочка" style="max-width: 150px; margin-top: 8px;">
     </div>
 
     <div class="place-card">
@@ -488,11 +485,22 @@
       <p><strong>📞 Телефоны:</strong></p>
       <p>• <a href="tel:+79221422910">+7 922 142 2910</a></p>
       <p>• <a href="tel:+79044507726">+7 904 450 7726</a></p>
-      <p><a href="https://yandex.ru/maps/?rtext=~61.550078,66.439746&rtt=auto" target="_blank" rel="noopener">📍 Проложить маршрут</a></p>
+      <p><a href="https://yandex.ru/maps/?rtext=~61.550078 ,66.439746&rtt=auto" target="_blank" rel="noopener">📍 Проложить маршрут</a></p>
     </div>
 
     <div id="transport">
-      <h2>🚌 Маршрутный транспорт</h2>
+      <h2>🚌 Транспорт</h2>
+
+      <div class="article-section">
+        <h3>📍 Как добраться до Талинки</h3>
+        <p>Основной способ добраться — на автобусе. Регулярное сообщение налажено с Няганью и Ханты-Мансийском. Также доступны частные рейсы:</p>
+        <ul>
+          <li>Из Талинки в Нягань — отправление <strong>от мини-стадиона</strong></li>
+          <li>Из Нягани в Талинку — отправление <strong>от Центра занятости</strong></li>
+        </ul>
+        <p>Билеты на маршрут <strong>Талинка — Ханты-Мансийск</strong> можно заказать онлайн:</p>
+        <p><a href="https://bilet.do/ " target="_blank" style="font-weight:bold; color:var(--accent-color); text-decoration:underline;">👉 Заказать билет на bilet.do</a></p>
+      </div>
 
       <h3>Нягань — Талинка — Ханты-Мансийск</h3>
       <div class="table-wrapper">
@@ -530,7 +538,7 @@
       </ul>
 
       <p><strong>Билеты на маршрут Талинка — Ханты-Мансийск можно заказать онлайн:</strong></p>
-      <p><a href="https://bilet.do/" target="_blank" style="font-weight:bold; color:var(--accent-color); text-decoration:underline;">👉 Заказать билет на bilet.do</a></p>
+      <p><a href="https://bilet.do/ " target="_blank" style="font-weight:bold; color:var(--accent-color); text-decoration:underline;">👉 Заказать билет на bilet.do</a></p>
 
       <h3>Из Талинки в Нягань</h3>
       <div class="table-wrapper">
@@ -609,7 +617,7 @@
 
       <div class="master-card">
         <h3>🍰 Светлана — торты на заказ</h3>
-        <p><a href="https://vk.com/cvetlanna" target="_blank">VK: cvetlanna</a></p>
+        <p><a href="https://vk.com/cvetlanna " target="_blank">VK: cvetlanna</a></p>
       </div>
 
       <div class="master-card">
@@ -618,14 +626,14 @@
         <p><strong>Телефоны:</strong><br>
         • <a href="tel:+79527094667">+7 952 709 4667</a><br>
         • <a href="tel:+79125145064">+7 912 514 5064</a></p>
-        <p><strong>Связь:</strong> <a href="https://t.me/bondaryushka" target="_blank">Telegram</a></p>
+        <p><strong>Связь:</strong> <a href="https://t.me/bondaryushka " target="_blank">Telegram</a></p>
       </div>
 
       <div class="master-card">
         <h3>🧱 Талинка Ремонт</h3>
         <p>Квартиры, санузлы, электрика, сантехника, отделка.</p>
         <p><strong>Телефон:</strong> <a href="tel:+79822169611">+7 982 216 9611</a><br>
-        <strong>Telegram:</strong> <a href="https://t.me/XXXCHERKASOVXXX" target="_blank">Канал</a></p>
+        <strong>Telegram:</strong> <a href="https://t.me/XXXCHERKASOVXXX " target="_blank">Канал</a></p>
       </div>
 
       <div class="master-card">
@@ -638,7 +646,24 @@
         <h3>🛍️ Siberian Wellness / ЭКО магазин</h3>
         <p>Натуральные продукты для здоровья и красоты.</p>
         <p><strong>Телефон:</strong> <a href="tel:+79129346603">+7 912 934 6603</a><br>
-        <strong>Telegram:</strong> <a href="https://t.me/+hKnnu80WhCxjNjhi" target="_blank">Группа</a></p>
+        <strong>Telegram:</strong> <a href="https://t.me/+hKnnu80WhCxjNjhi " target="_blank">Группа</a></p>
+      </div>
+    </div>
+
+    <!-- ОБРАЗОВАНИЕ -->
+    <div id="education">
+      <h2>📚 Образование</h2>
+
+      <div class="education-card">
+        <h3>🏫 Центр детства «ПроРечь»</h3>
+        <p><strong>ИП Захарова Светлана Михайловна</strong></p>
+        <p><strong>Услуги:</strong></p>
+        <ul>
+          <li>🗣️ <strong>Логопед:</strong> Профессиональная коррекция речи для детей.</li>
+          <li>📚 <strong>Группа «Домашка»:</strong> Выполняем домашние задания на «отлично» и без стресса! Помощь, дисциплина и спокойная атмосфера.</li>
+        </ul>
+        <p><strong>📞 Телефон:</strong> <a href="tel:+79125167787">+7 912 516 7787</a></p>
+        <p><strong>🕒 Режим работы:</strong> Будние дни, время занятий — после школьных уроков</p>
       </div>
     </div>
 
@@ -680,7 +705,7 @@
       <p><strong>📍 Адрес:</strong> п. г. т. Талинка, Центральный микрорайон, 45</p>
       <p><strong>📞 Телефон:</strong> <a href="tel:+73467245046">+7 34672 45046</a></p>
       <p><strong>🕒 Режим работы:</strong> Круглосуточно</p>
-      <p><a href="https://yandex.ru/maps/?rtext=~61.549372,66.439227&rtt=auto" target="_blank" rel="noopener">📍 Проложить маршрут</a></p>
+      <p><a href="https://yandex.ru/maps/?rtext=~61.549372 ,66.439227&rtt=auto" target="_blank" rel="noopener">📍 Проложить маршрут</a></p>
     </div>
 
     <div class="hotel-card">
@@ -690,14 +715,14 @@
       <p>• <a href="tel:+79822016514">+7 982 201 6514</a></p>
       <p>• <a href="tel:+79125348316">+7 912 534 8316</a></p>
       <p><strong>🕒 Режим работы:</strong> Круглосуточно</p>
-      <p><a href="https://yandex.ru/maps/?rtext=~61.548442,66.444267&rtt=auto" target="_blank" rel="noopener">📍 Проложить маршрут</a></p>
+      <p><a href="https://yandex.ru/maps/?rtext=~61.548442 ,66.444267&rtt=auto" target="_blank" rel="noopener">📍 Проложить маршрут</a></p>
     </div>
 
     <!-- EAALEN7 -->
     <div class="hotel-card">
       <h3>🏠 EAALEN7 — аренда жилой недвижимости с обслуживанием</h3>
       <p><strong>📞 Телефон:</strong> <a href="tel:+79827827327">+7 982 782 7327</a></p>
-      <img src="https://i.ibb.co/99bGkbp8/logo-ealen7.png" alt="Логотип EAALEN7" style="max-width: 150px; margin-top: 8px;">
+      <img src="https://i.ibb.co/99bGkbp8/logo-ealen7.png " alt="Логотип EAALEN7" style="max-width: 150px; margin-top: 8px;">
     </div>
 
     <div class="about-section" id="about-site">
@@ -710,10 +735,10 @@
         </button>
       </p>
       <p><strong>Добавить информацию:</strong>
-        <a href="https://t.me/Romanov_Petr10" target="_blank" rel="noopener">@Romanov_Petr10</a><br>
+        <a href="https://t.me/Romanov_Petr10 " target="_blank" rel="noopener">@Romanov_Petr10</a><br>
         <em>Если хотите добавить свои контакты в справочник — пишите</em>
       </p>
-      <p><strong>Обновлено:</strong> январь 2026</p>
+      <p><strong>Обновлено:</strong> февраль 2026</p>
     </div>
 
     <div class="privacy-section">
